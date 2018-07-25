@@ -1,0 +1,58 @@
+.customer_settings {
+  position: relative;
+  cursor: pointer;
+}
+.customer_current-customer {
+  display: flex;
+  align-items: center;
+  color: #a1a1a1;
+}
+.customer-icon-holder {
+  margin-right: 10px;
+  .customer-icon {
+    background: #684aff;
+    border-radius: 50%;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    height: 50px;
+    width: 50px;
+  }
+  .abbreviation {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+  }
+}
+.arrow {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  .svg-ic-table-arrow {
+    transform: rotate(90deg);
+  }
+}
+.customer-name {
+  font-size: 18px;
+  line-height: 1;
+  margin-right: 10px;
+}
+
+.customer-menu {
+  background: #fff;
+  position: absolute;
+  top: calc(100% + 20px);
+  left: -16px;
+  padding: 10px;
+  width: calc(100% + 12px);
+  overflow: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}

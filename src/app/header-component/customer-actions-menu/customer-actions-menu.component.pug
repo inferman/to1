@@ -1,0 +1,25 @@
+.customer_settings
+  .customer_current-customer(
+    (click)="customerMenuToggler()"
+  )
+    .customer-icon-holder
+      .customer-icon
+        span.abbreviation AL
+    .customer-name
+      | Name
+    .arrow
+      svg.icon.svg-ic-table-arrow
+        use(xlink:href="/assets/img/symbol-defs.svg#svg-ic-table-arrow")
+  div(
+    [ngClass]="{active: customerMenuVisible}"
+  ).customer-menu
+    ul.customer-menu_list
+      li
+        .customer-menu_item
+          span Profile
+      li
+        .customer-menu_item
+          span Help
+        .customer-menu_item
+          span Logout
+

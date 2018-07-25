@@ -1,0 +1,25 @@
+
+<div class="customer_settings">
+  <div class="customer_current-customer" (click)="customerMenuToggler()">
+    <div class="customer-icon-holder">
+      <div class="customer-icon"><span class="abbreviation">AL</span></div>
+    </div>
+    <div class="customer-name">Name</div>
+    <div class="arrow">
+      <svg class="icon svg-ic-table-arrow">
+        <use xlink:href="/assets/img/symbol-defs.svg#svg-ic-table-arrow"></use>
+      </svg>
+    </div>
+  </div>
+  <div class="customer-menu" [ngClass]="{active: customerMenuVisible}">
+    <ul class="customer-menu_list">
+      <li>
+        <div class="customer-menu_item"><span>Profile</span></div>
+      </li>
+      <li>
+        <div class="customer-menu_item"><span>Help</span></div>
+        <div class="customer-menu_item"><span>Logout</span></div>
+      </li>
+    </ul>
+  </div>
+</div>
