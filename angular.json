@@ -127,5 +127,12 @@
       }
     }
   },
-  "defaultProject": "TotalOne"
+  "defaultProject": "TotalOne",
+  "schematics": {
+    "@schematics/angular": {
+      "component": {
+        "spec": false
+      }
+    }
+  }
 }
