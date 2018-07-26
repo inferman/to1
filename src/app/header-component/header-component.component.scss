@@ -1,6 +1,8 @@
 .header-wrapper {
   background: #fff;
   max-width: 1920px;
+  position: relative;
+  z-index: 5;
   box-shadow: 0 0 6px 2px rgba(137, 141, 145, 0.2);
 }
 .header_menu-holder {
@@ -22,6 +24,8 @@
   }
 }
 .btn-burger {
+  color: #684aff;
+  font-size: 20px;
   .icon {
     color: #3980ff;
     font-size: 16px;

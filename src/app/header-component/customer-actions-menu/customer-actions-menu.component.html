@@ -4,9 +4,9 @@
     <div class="customer-icon-holder">
       <div class="customer-icon"><span class="abbreviation">AL</span></div>
     </div>
-    <div class="customer-name">Name</div>
+    <div class="customer-name">{{currentUser.userData.userName}}</div>
     <div class="arrow">
-      <svg class="icon svg-ic-table-arrow">
+      <svg class="icon svg-ic-table-arrow" [ngClass]="{active: customerMenuVisible}">
         <use xlink:href="/assets/img/symbol-defs.svg#svg-ic-table-arrow"></use>
       </svg>
     </div>
@@ -18,6 +18,8 @@
       </li>
       <li>
         <div class="customer-menu_item"><span>Help</span></div>
+      </li>
+      <li>
         <div class="customer-menu_item"><span>Logout</span></div>
       </li>
     </ul>

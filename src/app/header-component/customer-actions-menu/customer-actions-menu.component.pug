@@ -6,9 +6,9 @@
       .customer-icon
         span.abbreviation AL
     .customer-name
-      | Name
+      | {{currentUser.userData.userName}}
     .arrow
-      svg.icon.svg-ic-table-arrow
+      svg([ngClass]="{active: customerMenuVisible}").icon.svg-ic-table-arrow
         use(xlink:href="/assets/img/symbol-defs.svg#svg-ic-table-arrow")
   div(
     [ngClass]="{active: customerMenuVisible}"
@@ -20,6 +20,7 @@
       li
         .customer-menu_item
           span Help
+      li
         .customer-menu_item
           span Logout
 

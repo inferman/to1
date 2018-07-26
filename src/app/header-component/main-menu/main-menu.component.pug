@@ -1,3 +1,13 @@
-button(type="button").btn.btn-burger
-  svg.icon.svg-ic-burger
-    use(xlink:href="/assets/img/symbol-defs.svg#svg-ic-burger")
+nav(
+  [ngClass]="{active: state}"
+).main-site-navigation
+  ul.menu_list
+    li(
+      *ngFor="let menuItem of menuItemsList"
+    ).menu_list-item
+      a(href="").menu_item-box
+        .item_icon-holder
+          svg([ngClass]="menuItem.iconClass").icon
+            use(attr.xlink:href="{{'/assets/img/symbol-defs.svg#'+menuItem.iconClass}}")
+        .item_title {{ menuItem.title }}
+

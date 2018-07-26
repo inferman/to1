@@ -1,6 +1,12 @@
 
-<button class="btn btn-burger" type="button">
-  <svg class="icon svg-ic-burger">
-    <use xlink:href="/assets/img/symbol-defs.svg#svg-ic-burger"></use>
-  </svg>
-</button>
+<nav class="main-site-navigation" [ngClass]="{active: state}">
+  <ul class="menu_list">
+    <li class="menu_list-item" *ngFor="let menuItem of menuItemsList"><a class="menu_item-box" href="">
+        <div class="item_icon-holder">
+          <svg class="icon" [ngClass]="menuItem.iconClass">
+            <use attr.xlink:href="{{'/assets/img/symbol-defs.svg#'+menuItem.iconClass}}"></use>
+          </svg>
+        </div>
+        <div class="item_title">{{ menuItem.title }}</div></a></li>
+  </ul>
+</nav>

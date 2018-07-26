@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header-component.component.scss']
 })
 export class HeaderComponentComponent implements OnInit {
+  cspData = {
+    cspLogo: '../../../assets/img/totalone-logo.svg',
+    userData: {userName: 'Name', id: 1}
+  };
 
   constructor() { }
 
