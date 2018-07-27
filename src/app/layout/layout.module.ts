@@ -13,7 +13,9 @@ import {MainMenuComponent} from '../common-components/main-menu/main-menu.compon
 
 // routes
 export const ROUTES: Routes = [
-  { path: '', component: LayoutComponent }
+  { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
+  { path: 'dashboard', loadChildren: './pages/dashboard/dashboard.module#DashboardModule' },
+  { path: 'licences', loadChildren: './pages/licences/licences.module#LicencesModule' },
 ];
 
 @NgModule({
@@ -29,7 +31,6 @@ export const ROUTES: Routes = [
     HttpClientModule,
     CommonModule,
     RouterModule.forChild(ROUTES)
-  ],
-  bootstrap: [LayoutComponent]
+  ]
 })
 export class LayoutModule {}

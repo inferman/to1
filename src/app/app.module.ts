@@ -6,14 +6,13 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 
 export const ROUTES: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
-  { path: '', loadChildren: './layout/layout.module#LayoutModule' },
+  { path: '', loadChildren: './layout/layout.module#LayoutModule' }
 ];
 
 @NgModule({
   declarations: [
     LoginComponent,
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
