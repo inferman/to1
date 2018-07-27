@@ -1,10 +1,10 @@
 
-<nav class="main-site-navigation" [ngClass]="{active: state}">
+<nav class="main-site-navigation" [class.active]="state">
   <ul class="menu_list">
     <li class="menu_list-item" *ngFor="let menuItem of menuItemsList"><a class="menu_item-box" href="">
         <div class="item_icon-holder">
           <svg class="icon" [ngClass]="menuItem.iconClass">
-            <use attr.xlink:href="{{'/assets/img/symbol-defs.svg#'+menuItem.iconClass}}"></use>
+            <use attr.xlink:href="{{'../../../assets/img/symbol-defs.svg#'+menuItem.iconClass}}"></use>
           </svg>
         </div>
         <div class="item_title">{{ menuItem.title }}</div></a></li>

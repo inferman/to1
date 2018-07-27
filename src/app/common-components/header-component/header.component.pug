@@ -1,4 +1,4 @@
-.header-component
+header.header-component
   .header-wrapper.flex-container.align_main--between.collapse
     .header-col.flex-item.flex-container.collapse.align_cross--center
       .header_menu-holder.flex-item.flex-item--shrink
@@ -6,7 +6,7 @@
           (click)="navOpened = !navOpened"
         ).btn.btn-burger
           svg.icon.svg-ic-burger
-            use(xlink:href="/assets/img/symbol-defs.svg#svg-ic-burger")
+            use(xlink:href="../../../assets/img/symbol-defs.svg#svg-ic-burger")
 
       .header_logo-holder.flex-item.flex-item--shrink
         img(src="../../../assets/img/totalone-logo.svg")
@@ -17,7 +17,7 @@
         li.header_action-item
           customer-actions-menu(
             [currentUser]="cspData"
-          )
+            )
 
         li.header_action-item
           .customer_notifications-bar item
@@ -25,4 +25,4 @@
           .home-link item
   main-menu(
     [state]="navOpened"
-  )
+    )

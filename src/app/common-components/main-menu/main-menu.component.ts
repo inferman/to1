@@ -19,10 +19,6 @@ export class MainMenuComponent implements OnInit {
     { title: 'Logs', iconClass: 'svg-ic-logs' }
   ];
 
-  onMenuStatusChange() {
-    console.log('sadf');
-  }
-
   constructor() { }
 
   ngOnInit() {
