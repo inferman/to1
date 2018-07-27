@@ -9,14 +9,14 @@ export class MainMenuComponent implements OnInit {
   @Input() state;
 
   menuItemsList = [
-    { title: 'Dashboard', iconClass: 'svg-ic-dashboard' },
-    { title: 'Deployment & configuration', iconClass: 'svg-ic-deployment' },
-    { title: 'Organization & settings', iconClass: 'svg-ic-organization' },
-    { title: 'Users & permissions', iconClass: 'svg-ic-users' },
-    { title: 'Software & services', iconClass: 'svg-ic-software' },
-    { title: 'Billing', iconClass: 'svg-billing' },
-    { title: 'Settings', iconClass: 'svg-ic-settings' },
-    { title: 'Logs', iconClass: 'svg-ic-logs' }
+    { title: 'Dashboard', iconClass: 'svg-ic-dashboard', link: 'dashboard' },
+    { title: 'Deployment & configuration', iconClass: 'svg-ic-deployment', link: '#' },
+    { title: 'Organization & settings', iconClass: 'svg-ic-organization', link: '#' },
+    { title: 'Users & permissions', iconClass: 'svg-ic-users', link: '#' },
+    { title: 'Software & services', iconClass: 'svg-ic-software', link: 'licences' },
+    { title: 'Billing', iconClass: 'svg-billing', link: '#' },
+    { title: 'Settings', iconClass: 'svg-ic-settings', link: '#' },
+    { title: 'Logs', iconClass: 'svg-ic-logs', link: '#' },
   ];
 
   constructor() { }

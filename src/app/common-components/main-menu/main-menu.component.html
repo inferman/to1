@@ -1,7 +1,7 @@
 
 <nav class="main-site-navigation" [class.active]="state">
   <ul class="menu_list">
-    <li class="menu_list-item" *ngFor="let menuItem of menuItemsList"><a class="menu_item-box" href="">
+    <li class="menu_list-item" *ngFor="let menuItem of menuItemsList"><a class="menu_item-box" routerLink="{{menuItem.link}}" routerLinkActive="active">
         <div class="item_icon-holder">
           <svg class="icon" [ngClass]="menuItem.iconClass">
             <use attr.xlink:href="{{'../../../assets/img/symbol-defs.svg#'+menuItem.iconClass}}"></use>

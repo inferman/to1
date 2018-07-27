@@ -13,7 +13,7 @@
 .menu_list { display: inline-flex; }
 .menu_list-item {
   display: flex;
-  box-shadow: 0 2px 4px rgba(137, 141, 145, 0.2);
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
   &:not(:last-child) { margin-right: 2px; }
 }
 .menu_item-box {
@@ -24,8 +24,9 @@
   padding: 10px 20px 5px;
   text-align: center;
   transition: background 0.2s ease, color 0.2s ease;
-  width: 100px;
-  &:hover {
+  width: 150px;
+  &:hover,
+  &.active {
     background: #684aff;
     color: #fff;
   }
@@ -34,5 +35,6 @@
   color: #684aff;
   font-size: 35px;
   transition: color 0.2s ease;
-  .menu_item-box:hover > & { color: #fff; }
+  .menu_item-box:hover > &,
+  .menu_item-box.active > & { color: #fff; }
 }

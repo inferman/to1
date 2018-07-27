@@ -3,7 +3,7 @@
   max-width: 1920px;
   position: relative;
   z-index: 5;
-  box-shadow: 0 0 6px 2px rgba(137, 141, 145, 0.2);
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
 }
 .header_menu-holder {
   padding: 0 20px;
@@ -16,18 +16,16 @@
   display: flex;
   align-items: center;
   flex: 0 0 auto;
-  padding: 10px 16px;
-  color: #000;
+  justify-content: center;
+  padding: 23px 18px;
+  color: #677698;
   font-size: 16px;
+  min-width: 88px;
   &:not(:last-child) {
-    border-right: 1px solid #c1c1c1;
+    border-right: 2px solid #F4F4F4;
   }
 }
 .btn-burger {
-  color: #684aff;
-  font-size: 20px;
-  .icon {
-    color: #3980ff;
-    font-size: 16px;
-  }
+  color: #6071CF;
+  font-size: 18px;
 }

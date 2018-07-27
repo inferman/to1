@@ -5,18 +5,18 @@
 .customer_current-customer {
   display: flex;
   align-items: center;
-  color: #a1a1a1;
+  color: #B1B7BC;
 }
 .customer-icon-holder {
   margin-right: 10px;
   .customer-icon {
-    background: #684aff;
+    background: #6071CF;
     border-radius: 50%;
     color: #fff;
     position: relative;
     overflow: hidden;
-    height: 50px;
-    width: 50px;
+    height: 42px;
+    width: 42px;
   }
   .abbreviation {
     position: absolute;
@@ -45,14 +45,14 @@
 .customer-menu {
   background: #fff;
   position: absolute;
-  top: calc(100% + 10px);
-  left: -16px;
-  width: calc(100% + 32px);
+  top: calc(100% + 23px);
+  left: -18px;
+  width: calc(100% + 36px);
   overflow: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
   opacity: 0;
   visibility: hidden;
-  box-shadow: 0px 3px 10px 0px rgba(137, 141, 145, 0.2);
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
   &.active {
     opacity: 1;
     visibility: visible;
@@ -60,9 +60,10 @@
 }
 
 .customer-menu_list {
-  box-shadow: inset 0px 6px 4px -4px rgba(137, 141, 145, 0.2);
+  color: #B1B7BC;
+  box-shadow: inset 0px 9px 4px -4px rgba(0, 0, 0, 0.1);
   > li {
-    padding: 10px;
-    &:not(:last-child) { border-bottom: 1px solid #c3c3c3; }
+    padding: 10px 14px;
+    &:not(:last-child) { border-bottom: 1px solid #F4F4F4; }
   }
 }

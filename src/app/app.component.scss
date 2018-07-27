@@ -1,0 +1,15 @@
+.page-wrapper {
+  background: rgba(241, 241, 244, 0.5);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.page-header,
+.page-footer {
+  flex: 0 0 auto;
+  width: 100%;
+}
+.page-main {
+  padding-top: 115px;
+  flex: 1 1 auto;
+}

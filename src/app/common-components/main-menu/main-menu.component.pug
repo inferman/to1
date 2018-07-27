@@ -5,10 +5,11 @@ nav(
     li(
       *ngFor="let menuItem of menuItemsList"
     ).menu_list-item
-      a(href="").menu_item-box
+      a(
+        routerLink="{{menuItem.link}}",
+        routerLinkActive="active").menu_item-box
         .item_icon-holder
           svg([ngClass]="menuItem.iconClass").icon
             use(attr.xlink:href="{{'../../../assets/img/symbol-defs.svg#'+menuItem.iconClass}}")
         .item_title {{ menuItem.title }}
 
-//-p menu

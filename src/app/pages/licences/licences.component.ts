@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-licences',
+  selector: 'licences',
   templateUrl: './licences.component.html',
   styleUrls: ['./licences.component.scss']
 })
