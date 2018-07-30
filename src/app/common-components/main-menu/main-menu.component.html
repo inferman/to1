@@ -1,12 +1,18 @@
 
 <nav class="main-site-navigation" [class.active]="state">
   <ul class="menu_list">
-    <li class="menu_list-item" *ngFor="let menuItem of menuItemsList"><a class="menu_item-box" (click)="onMenuClick(menuItem)" routerLink="{{menuItem.link}}" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active">
+    <li class="menu_list-item" *ngFor="let menuItem of menuItemsList">
+      <div class="menu_item-box" (click)="onMenuClick(menuItem)" routerLink="{{menuItem.link}}" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active">
         <div class="item_icon-holder">
           <svg class="icon" [ngClass]="menuItem.iconClass">
             <use attr.xlink:href="{{'../../../assets/img/symbol-defs.svg#'+menuItem.iconClass}}"></use>
           </svg>
         </div>
-        <div class="item_title">{{ menuItem.title }}</div></a></li>
+        <div class="item_title">{{ menuItem.title }}</div>
+      </div>
+      <div class="menu_subnav-holder" *ngIf="menuItem.subNav &amp;&amp; menuItem.subNav.length" [class.active]="menuItem.isSubNavActive">
+        <div class="subnav_item" *ngFor="let subItem of menuItem.subNav">{{ subItem.title }}</div>
+      </div>
+    </li>
   </ul>
 </nav>

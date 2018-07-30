@@ -5,7 +5,7 @@ nav(
     li(
       *ngFor="let menuItem of menuItemsList"
     ).menu_list-item
-      a(
+      div(
         (click)="onMenuClick(menuItem)",
         routerLink="{{menuItem.link}}",
         [routerLinkActiveOptions]="{ exact: true }",
@@ -14,4 +14,9 @@ nav(
           svg([ngClass]="menuItem.iconClass").icon
             use(attr.xlink:href="{{'../../../assets/img/symbol-defs.svg#'+menuItem.iconClass}}")
         .item_title {{ menuItem.title }}
+      div(
+        *ngIf="menuItem.subNav && menuItem.subNav.length",
+        [class.active]="menuItem.isSubNavActive"
+      ).menu_subnav-holder
+        div(*ngFor="let subItem of menuItem.subNav").subnav_item {{ subItem.title }}
 
