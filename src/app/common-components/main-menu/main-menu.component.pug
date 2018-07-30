@@ -6,7 +6,9 @@ nav(
       *ngFor="let menuItem of menuItemsList"
     ).menu_list-item
       a(
+        (click)="onMenuClick(menuItem)",
         routerLink="{{menuItem.link}}",
+        [routerLinkActiveOptions]="{ exact: true }",
         routerLinkActive="active").menu_item-box
         .item_icon-holder
           svg([ngClass]="menuItem.iconClass").icon

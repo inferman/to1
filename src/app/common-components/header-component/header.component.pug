@@ -24,5 +24,6 @@ header.header-component
         li.header_action-item
           .home-link item
   main-menu(
-    [state]="navOpened"
+    [state]="navOpened",
+    (menuToggler)="onMenuStateChange()"
     )

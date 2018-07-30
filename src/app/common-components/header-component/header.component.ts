@@ -18,4 +18,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
+  onMenuStateChange() {
+    this.navOpened = !this.navOpened;
+  }
+
 }

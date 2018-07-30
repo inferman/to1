@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'main-menu',
@@ -7,21 +8,28 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class MainMenuComponent implements OnInit {
   @Input() state;
+  @Output() menuToggler = new EventEmitter();
 
   menuItemsList = [
     { title: 'Dashboard', iconClass: 'svg-ic-dashboard', link: 'dashboard' },
-    { title: 'Deployment & configuration', iconClass: 'svg-ic-deployment', link: '#' },
-    { title: 'Organization & settings', iconClass: 'svg-ic-organization', link: '#' },
-    { title: 'Users & permissions', iconClass: 'svg-ic-users', link: '#' },
-    { title: 'Software & services', iconClass: 'svg-ic-software', link: 'licences' },
-    { title: 'Billing', iconClass: 'svg-billing', link: '#' },
-    { title: 'Settings', iconClass: 'svg-ic-settings', link: '#' },
-    { title: 'Logs', iconClass: 'svg-ic-logs', link: '#' },
+    { title: 'Deployment & configuration', iconClass: 'svg-ic-deployment', link: null, subNav: [{}] },
+    { title: 'Organization & settings', iconClass: 'svg-ic-organization', link: null, subNav: [{}] },
+    { title: 'Users & permissions', iconClass: 'svg-ic-users', link: null, subNav: [{}] },
+    { title: 'Software & services', iconClass: 'svg-ic-software', link: 'licences'},
+    { title: 'Billing', iconClass: 'svg-billing', link: null, subNav: [{}] },
+    { title: 'Settings', iconClass: 'svg-ic-settings', link: null, subNav: [{}] },
+    { title: 'Logs', iconClass: 'svg-ic-logs', link: null, subNav: [{}] },
   ];
 
-  constructor() { }
+  constructor(private route: Router) {
+  }
 
   ngOnInit() {
+  }
+
+  onMenuClick(element, rla) {
+    if(element && !element.subNav)
+      this.menuToggler.emit( this.state = !this.state );
   }
 
 }
