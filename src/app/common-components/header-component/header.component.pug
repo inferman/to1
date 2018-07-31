@@ -3,7 +3,7 @@ header.header-component
     .header-col.flex-item.flex-container.collapse.align_cross--center
       .header_menu-holder.flex-item.flex-item--shrink
         button(type="button",
-          (click)="navOpened = !navOpened"
+          (click)="onNavClick()"
         ).btn.btn-burger
           svg.icon.svg-ic-burger
             use(xlink:href="../../../assets/img/symbol-defs.svg#svg-ic-burger")
@@ -23,7 +23,4 @@ header.header-component
           .customer_notifications-bar item
         li.header_action-item
           .home-link item
-  main-menu(
-    [state]="navOpened",
-    (menuToggler)="onMenuStateChange()"
-    )
+  main-menu

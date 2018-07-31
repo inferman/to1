@@ -3,7 +3,7 @@
   <div class="header-wrapper flex-container align_main--between collapse">
     <div class="header-col flex-item flex-container collapse align_cross--center">
       <div class="header_menu-holder flex-item flex-item--shrink">
-        <button class="btn btn-burger" type="button" (click)="navOpened = !navOpened">
+        <button class="btn btn-burger" type="button" (click)="onNavClick()">
           <svg class="icon svg-ic-burger">
             <use xlink:href="../../../assets/img/symbol-defs.svg#svg-ic-burger"></use>
           </svg>
@@ -28,5 +28,5 @@
       </ul>
     </div>
   </div>
-  <main-menu [state]="navOpened" (menuToggler)="onMenuStateChange()"></main-menu>
+  <main-menu></main-menu>
 </header>

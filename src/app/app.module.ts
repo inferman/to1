@@ -8,6 +8,8 @@ import { HeaderComponent } from './common-components/header-component/header.com
 import {FooterComponent} from './common-components/footer-component/footer.component';
 import {CustomerActionsMenuComponent} from './common-components/customer-actions-menu/customer-actions-menu.component';
 import {MainMenuComponent} from './common-components/main-menu/main-menu.component';
+import {MenuService} from './services/menu-service.service';
+
 
 
 export const ROUTES: Routes = [
@@ -30,7 +32,9 @@ export const ROUTES: Routes = [
     BrowserModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [],
+  providers: [
+    MenuService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

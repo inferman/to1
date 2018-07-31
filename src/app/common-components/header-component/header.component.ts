@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import {MenuService} from '../../services/menu-service.service';
+
 @Component({
   selector: 'header-component',
   templateUrl: './header.component.html',
@@ -11,15 +13,13 @@ export class HeaderComponent implements OnInit {
     userData: {userName: 'Name', id: 1}
   };
 
-  navOpened = false;
-
-  constructor() { }
+  constructor(private menuService: MenuService) { }
 
   ngOnInit() {
   }
 
-  onMenuStateChange() {
-    this.navOpened = !this.navOpened;
+  onNavClick() {
+    this.menuService.isMenuActive.next();
   }
 
 }

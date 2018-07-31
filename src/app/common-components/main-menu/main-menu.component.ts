@@ -1,4 +1,8 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Params, Router, ParamMap, NavigationStart, NavigationEnd} from '@angular/router';
+import { map, filter, scan, groupBy } from 'rxjs/operators';
+
+import { MenuService } from '../../services/menu-service.service';
 
 @Component({
   selector: 'main-menu',
@@ -6,82 +10,38 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./main-menu.component.scss']
 })
 export class MainMenuComponent implements OnInit {
-  @Input() state;
-  @Output() menuToggler = new EventEmitter();
 
-  menuItemsList = [
-    {
-      title: 'Dashboard',
-      iconClass: 'svg-ic-dashboard',
-      link: '/dashboard',
-      isSubNavActive: false,
-      subNav: []
-    },
-    {
-      title: 'Deployment & configuration',
-      iconClass: 'svg-ic-deployment',
-      link: null,
-      isSubNavActive: false,
-      subNav: [
-        { title: 'test1' },
-        { title: 'test2' }
-    ]
-    },
-    {
-      title: 'Organization & settings',
-      iconClass: 'svg-ic-organization',
-      link: null,
-      isSubNavActive: false,
-      subNav: [{title: 'test1'}]
-    },
-    {
-      title: 'Users & permissions',
-      iconClass: 'svg-ic-users',
-      link: null,
-      isSubNavActive: false,
-      subNav: [{title: 'test1'}]
-    },
-    {
-      title: 'Software & services',
-      iconClass: 'svg-ic-software',
-      link: '/licences'
-    },
-    {
-      title: 'Billing',
-      iconClass: 'svg-billing',
-      link: null,
-      isSubNavActive: false,
-      subNav: [{title: 'test1'}]
-    },
-    {
-      title: 'Settings',
-      iconClass: 'svg-ic-settings',
-      link: null,
-      isSubNavActive: false,
-      subNav: [{title: 'test1'}]
-    },
-    {
-      title: 'Logs',
-      iconClass: 'svg-ic-logs',
-      link: null,
-      isSubNavActive: false,
-      subNav: [{title: 'test1'}]
-    },
-  ];
+  menuItemsList;
+  currentUrl;
+  menuActive = false;
 
-  constructor() {
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private menuService: MenuService
+  ) {
   }
 
   ngOnInit() {
+    this.menuItemsList = this.menuService.getMenuList();
+    this.menuService.isMenuActive.subscribe(() => {
+      this.toggleMenu();
+    });
+  }
+
+  toggleMenu() {
+    this.menuActive = !this.menuActive;
   }
 
   onMenuClick(element) {
-    if(!element.subNav.length) {
-      this.menuToggler.emit(this.state = !this.state);
-    } else {
+    if (element.subNav && element.subNav.length) {
       this.menuItemsList.forEach((item) => { item.isSubNavActive = false; });
       element.isSubNavActive = !element.isSubNavActive;
-    }
+    } else { this.toggleMenu(); }
+    /*this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd),
+      //last()
+    ).subscribe((event: NavigationEnd) => { console.log(event); });*/
   }
 
 }

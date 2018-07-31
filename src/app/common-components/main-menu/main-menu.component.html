@@ -1,5 +1,5 @@
 
-<nav class="main-site-navigation" [class.active]="state">
+<nav class="main-site-navigation" [class.active]="menuActive">
   <ul class="menu_list">
     <li class="menu_list-item" *ngFor="let menuItem of menuItemsList">
       <div class="menu_item-box" (click)="onMenuClick(menuItem)" routerLink="{{menuItem.link}}" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active">
