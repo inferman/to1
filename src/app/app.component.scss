@@ -12,4 +12,8 @@
 .page-main {
   padding: 115px 15px 0;
   flex: 1 1 auto;
+  .content-wrapper {
+    max-width: 1400px;
+    margin: auto;
+  }
 }

@@ -1,5 +1,5 @@
 export class FiltersService {
-  mainFiltersList = [
+  tabsList = [
     {
       title: 'microsoft',
       url: '',
@@ -22,19 +22,36 @@ export class FiltersService {
     }
   ];
 
-  secondFiltersList = [
-    { title: 'Office 365', url: '' },
-    { title: 'Azure', url: '' },
-    { title: 'Azure Reserved VM', url: '' },
-    { title: 'Software subscriptions', url: '' },
-    { title: 'SPLA', url: '' }
+  categoriesList = [
+    {title: 'Office 365', url: ''},
+    {title: 'Azure', url: ''},
+    {title: 'Azure Reserved VM', url: ''},
+    {title: 'Software subscriptions', url: ''},
+    {title: 'SPLA', url: ''}
   ];
 
-  getFiltersList() {
-    return this.mainFiltersList;
+  filtersList = [
+    { label: 'select month', name: 'month', type: 'text' },
+    { label: 'name', name: 'name', type: 'text' },
+    { label: 'language', name: 'language', type: 'text' },
+    { label: 'category', name: 'category', type: 'text' },
+    { label: 'subcategory', name: 'subcategory', type: 'text' },
+    { label: 'select currency', name: 'currency', type: 'text' },
+    { label: 'region', name: 'region', type: 'text' },
+    { label: 'date', name: 'date', type: 'text' },
+    { label: 'price', name: 'price', type: 'text' },
+    { label: 'some', name: 'some', type: 'text' }
+  ];
+
+  getTabsList() {
+    return this.tabsList;
   }
 
-  getSecondFiltersList() {
-    return this.secondFiltersList;
+  getCategoriesList() {
+    return this.categoriesList;
+  }
+
+  getFiltersList() {
+    return this.filtersList;
   }
 }

@@ -10,16 +10,18 @@ import {FiltersService} from '../../services/filters.service';
 })
 export class MainFiltersComponent implements OnInit {
 
-  mainFiltersList = [];
-  secondFiltersList = [];
+  tabsList = [];
+  categoriesList = [];
+  filtersList = [];
   mainActiveTab = '';
   secondActiveTab = '';
 
   constructor(private filtersService: FiltersService) { }
 
   ngOnInit() {
-    this.mainFiltersList = this.filtersService.getFiltersList();
-    this.secondFiltersList = this.filtersService.getSecondFiltersList();
+    this.tabsList = this.filtersService.getTabsList();
+    this.categoriesList = this.filtersService.getCategoriesList();
+    this.filtersList = this.filtersService.getFiltersList();
   }
 
   setActiveMainTab(elem) {

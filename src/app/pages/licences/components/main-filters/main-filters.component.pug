@@ -1,25 +1,41 @@
 .filters-block_wrapper
   .filters-block_navigation
     .filters_main-navigation
-      ul.filters_tabs-list
-        li(
+      ul.filters_navigation-list
+        li.filters_navigation-item(
           (click)="setActiveMainTab(filter)",
-          *ngFor="let filter of mainFiltersList; let i = index",
+          *ngFor="let filter of tabsList; let i = index",
           [class.active]="mainActiveTab ? (filter.title === mainActiveTab) : (i === 0)"
         )
-          button(type="button").btn
+          .btn.navigation-btn
             | {{ filter.title }}
-    .filters_second-navigation
-      ul.filters_inner-tabs-list
-        li(
+  .filters-block_main
+    .filters_categories-navigation
+      ul.filters_categories-list
+        li.filters_category-item(
           (click)="setSecondMainTab(innerFilter)",
-          *ngFor="let innerFilter of secondFiltersList; let i = index",
+          *ngFor="let innerFilter of categoriesList; let i = index",
           [class.active]="secondActiveTab ? (innerFilter.title === secondActiveTab) : (i === 0)"
         )
-          span.filters_inner-tab {{ innerFilter.title }}
-      .arrows-box
-        .arrow 1
-        .arrow 2
+          .btn.category-btn {{ innerFilter.title }}
+      .filters_arrows-box
+        .btn.arrow-btn.arrow-btn--prev
+          svg.icon.svg-ic-table-arrow
+            use(xlink:href="../../../../../assets/img/symbol-defs.svg#svg-ic-table-arrow")
+        .btn.arrow-btn.arrow-btn--next
+          svg.icon.svg-ic-table-arrow
+            use(xlink:href="../../../../../assets/img/symbol-defs.svg#svg-ic-table-arrow")
 
 
-  .filters-block_content
+    .filters_content-box
+      ul.filters-list
+        li.filter-item(
+          *ngFor="let filter of filtersList"
+        )
+          .filter-wrapper
+            label {{ filter.label }}
+            input(type="text",
+              name="{{ filter.name }}"
+            )
+
+
