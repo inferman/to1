@@ -1,0 +1,22 @@
+
+<div class="filters-block_wrapper">
+  <div class="filters-block_navigation">
+    <div class="filters_main-navigation">
+      <ul class="filters_tabs-list">
+        <li (click)="setActiveMainTab(filter)" *ngFor="let filter of mainFiltersList; let i = index" [class.active]="mainActiveTab ? (filter.title === mainActiveTab) : (i === 0)">
+          <button class="btn" type="button">{{ filter.title }}</button>
+        </li>
+      </ul>
+    </div>
+    <div class="filters_second-navigation">
+      <ul class="filters_inner-tabs-list">
+        <li (click)="setSecondMainTab(innerFilter)" *ngFor="let innerFilter of secondFiltersList; let i = index" [class.active]="secondActiveTab ? (innerFilter.title === secondActiveTab) : (i === 0)"><span class="filters_inner-tab">{{ innerFilter.title }}</span></li>
+      </ul>
+      <div class="arrows-box">
+        <div class="arrow">1</div>
+        <div class="arrow">2</div>
+      </div>
+    </div>
+  </div>
+  <div class="filters-block_content"></div>
+</div>

@@ -1,0 +1,25 @@
+.filters-block_wrapper
+  .filters-block_navigation
+    .filters_main-navigation
+      ul.filters_tabs-list
+        li(
+          (click)="setActiveMainTab(filter)",
+          *ngFor="let filter of mainFiltersList; let i = index",
+          [class.active]="mainActiveTab ? (filter.title === mainActiveTab) : (i === 0)"
+        )
+          button(type="button").btn
+            | {{ filter.title }}
+    .filters_second-navigation
+      ul.filters_inner-tabs-list
+        li(
+          (click)="setSecondMainTab(innerFilter)",
+          *ngFor="let innerFilter of secondFiltersList; let i = index",
+          [class.active]="secondActiveTab ? (innerFilter.title === secondActiveTab) : (i === 0)"
+        )
+          span.filters_inner-tab {{ innerFilter.title }}
+      .arrows-box
+        .arrow 1
+        .arrow 2
+
+
+  .filters-block_content
