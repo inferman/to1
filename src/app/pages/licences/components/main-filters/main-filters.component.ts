@@ -12,16 +12,18 @@ export class MainFiltersComponent implements OnInit {
 
   tabsList = [];
   categoriesList = [];
-  filtersList = [];
+  dinamicFiltersList = [];
+  staticFiltersList = [];
   mainActiveTab = '';
   secondActiveTab = '';
 
   constructor(private filtersService: FiltersService) { }
 
   ngOnInit() {
-    this.tabsList = this.filtersService.getTabsList();
-    this.categoriesList = this.filtersService.getCategoriesList();
-    this.filtersList = this.filtersService.getFiltersList();
+    this.tabsList = this.filtersService.getData('tabsList');
+    this.categoriesList = this.filtersService.getData('categoriesList');
+    this.dinamicFiltersList = this.filtersService.getData('dinamicFiltersList');
+    this.staticFiltersList = this.filtersService.getData('staticFiltersList');
   }
 
   setActiveMainTab(elem) {

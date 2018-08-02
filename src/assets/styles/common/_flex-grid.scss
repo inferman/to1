@@ -6,8 +6,7 @@
     right: -16px;
     left: -16px;
   }
-  &.collapse,
-  .collapse & {
+  &.collapse {
     margin: {
       right: 0;
       left: 0;
@@ -61,7 +60,7 @@
     right: 16px;
     left: 16px;
   }
-  .collapse & { padding: 0; }
+  .collapse > & { padding: 0; }
   &--shrink { flex: 0 0 auto; }
   &--stretch { flex: 1 1 0%; }
 

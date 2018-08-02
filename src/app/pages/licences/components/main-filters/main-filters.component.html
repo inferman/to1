@@ -30,14 +30,59 @@
       </div>
     </div>
     <div class="filters_content-box">
-      <ul class="filters-list">
-        <li class="filter-item" *ngFor="let filter of filtersList">
-          <div class="filter-wrapper">
-            <label>{{ filter.label }}</label>
-            <input type="text" name="{{ filter.name }}"/>
+      <section class="filters_static-filters flex-container collapse align_cross--center">
+        <div class="flex-item item--8">
+          <ul class="flex-container">
+            <li class="flex-item" *ngFor="let filter of staticFiltersList">
+              <div class="filter-wrapper">
+                <label>{{ filter.label }}</label>
+                <input type="text" name="{{ filter.name }}"/>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="flex-item item--2">
+          <div class="filter_buttons-group">111111</div>
+        </div>
+        <div class="flex-item item--2">
+          <div class="filter_search-box">
+            <input type="search" placeholder="Search"/>
+            <button class="btn btn--search"></button>
           </div>
-        </li>
-      </ul>
+        </div>
+      </section>
+      <section class="filters_dinamic-filters">
+        <ul class="flex-container">
+          <li class="flex-item item--2" *ngFor="let filter of dinamicFiltersList">
+            <div class="filter-wrapper">
+              <label>{{ filter.label }}</label>
+              <input type="text" name="{{ filter.name }}"/>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <section class="flex-container collapse align_main--end action-btns_wrapper">
+        <div class="flex-item flex-item--shrink">
+          <div class="btns-group">
+            <button class="btn btn_iconed btn--secondary" type="button">
+              <div class="btn_icon-holder">
+                <svg class="icon svg-office365">
+                  <use xlink:href="../../../../../assets/img/symbol-defs.svg#svg-office365"></use>
+                </svg>
+              </div>
+              <div class="btn_text-holder">Import  product</div>
+            </button>
+            <button class="btn btn_iconed btn--primary" type="button">
+              <div class="btn_icon-holder">
+                <svg class="icon svg-office365">
+                  <use xlink:href="../../../../../assets/img/symbol-defs.svg#svg-office365"></use>
+                </svg>
+              </div>
+              <div class="btn_text-holder">Reset</div>
+            </button>
+          </div>
+        </div>
+      </section>
     </div>
   </div>
 </div>

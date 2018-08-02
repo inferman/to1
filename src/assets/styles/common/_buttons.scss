@@ -1,0 +1,41 @@
+.btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1;
+  text-align: center;
+  &:focus { outline: none; }
+  &--primary {
+    background: #1875F0;
+    color: #fff;
+  }
+  &--secondary {
+    background: #fff;
+    color: #898989;
+  }
+}
+.btn_iconed {
+  border-radius: 5px;
+  padding: 8px 0;
+  min-height: 40px;
+  position: relative;
+  text-align: center;
+  .btn_icon-holder {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    font-size: 26px;
+    top: 50%;
+    left: 0;
+    width: 50px;
+    transform: translateY(-50%);
+  }
+  .btn_text-holder {
+    padding: 0 30px 0 60px;
+  }
+}
+
+
+

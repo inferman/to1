@@ -1,0 +1,21 @@
+.filter_search-box {
+  border: 1px solid #659FEC;
+  border-radius: 34px;
+  font-size: 10px;
+  padding: 0 42px 0 8px;
+  position: relative;
+  overflow: hidden;
+  .btn--search {
+    color: #659FEC;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    padding: 0 10px;
+    width: 42px;
+  }
+  input {
+    border: none;
+    color: #659FEC;
+  }
+}
