@@ -35,12 +35,13 @@ svg:not(:root) {
 a { text-decoration: none; }
 
 
-input,
+input[type="text"],
 input[type="search"],
 select {
   font-weight: 400;
   height: 34px;
   padding: 8px 10px;
+  margin: 0;
   text-transform: none;
   width: 100%;
   &:focus {
