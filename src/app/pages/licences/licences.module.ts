@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 // containers
 import {LicencesComponent} from './licences.component';
 import {MainFiltersComponent} from './components/main-filters/main-filters.component';
+import {ProductsListComponent} from './components/products-list/products-list.component';
 
 // routes
 export const ROUTES: Routes = [
@@ -14,7 +15,8 @@ export const ROUTES: Routes = [
 @NgModule({
   declarations: [
     LicencesComponent,
-    MainFiltersComponent
+    MainFiltersComponent,
+    ProductsListComponent
   ],
   imports: [
     CommonModule,

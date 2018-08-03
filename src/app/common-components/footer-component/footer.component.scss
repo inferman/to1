@@ -1,6 +1,7 @@
+@import "../../../assets/styles/foundation-sites/settings";
 .footer-component {
-  background: #959BBB;
-  color: #fff;
+  background: $primary-color;
+  color: $white;
   padding: 28px 30px;
   p {
     font-size: 14px;

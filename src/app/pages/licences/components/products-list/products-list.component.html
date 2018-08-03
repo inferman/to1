@@ -1,0 +1,46 @@
+
+<div class="products-table-component">
+  <div class="products_pagination-selector">
+    <div class="pagination_header">
+      <div class="picked-value">show 10</div>
+      <div class="icon-holder">
+        <svg class="icon svg-ic-table-arrow">
+          <use xlink:href="../../../../../assets/img/symbol-defs.svg#svg-ic-table-arrow"></use>
+        </svg>
+      </div>
+    </div>
+    <div class="pagination_body"></div>
+  </div>
+  <div class="products-table_wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th></th>
+          <th *ngFor="let th of headerItemsList" [class.text-left]="th === 'name'">{{ th }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tr of productsList">
+          <td></td>
+          <td>{{tr.date}}</td>
+          <td class="text-left">{{tr.productName}}</td>
+          <td>{{tr.price.value}} {{tr.price.currency}}</td>
+          <td>
+            <div class="erp-fileld" [ngClass]="tr.erp.status">
+              <div class="erp_data">{{tr.erp.value}} {{tr.erp.currency}}</div>&nbsp;
+              <div class="erp_icon">{{tr.erp.status}}</div>
+            </div>
+          </td>
+          <td>{{tr.erpMargin.value}} {{tr.erpMargin.measuring}}</td>
+          <td>{{tr.salesMargin.value}} {{tr.salesMargin.measuring}}</td>
+          <td>{{tr.fixedPrice.value}} {{tr.fixedPrice.currency}}</td>
+          <td>{{tr.effectiveSalesPrice.value}} {{tr.effectiveSalesPrice.currency}}</td>
+          <td>{{tr.effectiveSalesMargin.value}} {{tr.effectiveSalesMargin.measuring}}</td>
+          <td [ngStyle]="{'color': tr.discountType === 'D' ? '#64D397' : '#E560A0'}">{{tr.discountType}}</td>
+          <td>{{tr.discountTable}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

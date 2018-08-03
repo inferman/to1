@@ -1,0 +1,40 @@
+@import "../../../../../../assets/styles/foundation-sites/settings";
+
+.products-table_wrapper {
+  font-size: 12px;
+  table {
+    border-radius: 5px;
+    box-shadow: 0px 4px 35px rgba($black, 0.18);
+    overflow: hidden;
+  }
+  thead {
+    background: $primary-color;
+    color: $white;
+    text-transform: uppercase;
+  }
+  th {
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    &:not(.text-left) { text-align: center; }
+  }
+  tbody {
+    > tr:not(:last-child) {
+      border-bottom: 1px solid $light-gray;
+    }
+    td {
+      color: $secondary-color;
+      padding: 16px 10px;
+      font-weight: 600;
+      white-space: nowrap;
+      &:not(.text-left) { text-align: center; }
+    }
+  }
+}
+
+.erp-fileld {
+  display: flex;
+  align-items: center;
+  &.ascending { color: $success-color }
+  &.descending { color: $alert-color }
+
+}

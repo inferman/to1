@@ -1,0 +1,39 @@
+.products-table-component
+  .products_pagination-selector
+    .pagination_header
+      .picked-value show 10
+      .icon-holder
+        svg.icon.svg-ic-table-arrow
+          use(xlink:href="../../../../../assets/img/symbol-defs.svg#svg-ic-table-arrow")
+    .pagination_body
+
+  .products-table_wrapper
+    table
+      thead
+        tr
+          th
+          th
+          th(
+            *ngFor="let th of headerItemsList",
+            [class.text-left]="th === 'name'"
+            ) {{ th }}
+      tbody
+        tr(*ngFor="let tr of productsList")
+          td
+          td {{tr.date}}
+          td.text-left {{tr.productName}}
+          td {{tr.price.value}} {{tr.price.currency}}
+          td
+            .erp-fileld( [ngClass]="tr.erp.status" )
+              .erp_data {{tr.erp.value}} {{tr.erp.currency}}
+              | &nbsp;
+              .erp_icon {{tr.erp.status}}
+          td {{tr.erpMargin.value}} {{tr.erpMargin.measuring}}
+          td {{tr.salesMargin.value}} {{tr.salesMargin.measuring}}
+          td {{tr.fixedPrice.value}} {{tr.fixedPrice.currency}}
+          td {{tr.effectiveSalesPrice.value}} {{tr.effectiveSalesPrice.currency}}
+          td {{tr.effectiveSalesMargin.value}} {{tr.effectiveSalesMargin.measuring}}
+          td(
+            [ngStyle]="{'color': tr.discountType === 'D' ? '#64D397' : '#E560A0'}")
+            | {{tr.discountType}}
+          td {{tr.discountTable}}
