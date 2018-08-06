@@ -49,7 +49,7 @@
           <td class="text-left">{{tr.productName}}</td>
           <td>{{tr.price.value}} {{tr.price.currency}}</td>
           <td>
-            <div class="erp-fileld" [ngClass]="tr.erp.status">
+            <div class="erp-field" [ngClass]="tr.erp.status">
               <div class="erp_data">{{tr.erp.value}} {{tr.erp.currency}}</div>
               <div class="erp-triangle"></div>
             </div>
@@ -59,7 +59,7 @@
           <td>{{tr.fixedPrice.value}} {{tr.fixedPrice.currency}}</td>
           <td>{{tr.effectiveSalesPrice.value}} {{tr.effectiveSalesPrice.currency}}</td>
           <td>{{tr.effectiveSalesMargin.value}} {{tr.effectiveSalesMargin.measuring}}</td>
-          <td [ngStyle]="{'color': tr.discountType === 'D' ? '#64D397' : '#E560A0'}">{{tr.discountType}}</td>
+          <td>{{tr.discountType}}</td>
           <td>{{tr.discountTable}}</td>
         </tr>
       </tbody>

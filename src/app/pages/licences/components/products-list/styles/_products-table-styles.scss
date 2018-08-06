@@ -15,6 +15,7 @@
   th {
     font-weight: 600;
     letter-spacing: 0.08em;
+    max-width: 120px;
     padding: {
       top: rem-calc(22);
       bottom: rem-calc(22);
@@ -28,7 +29,7 @@
       &:not(:last-child) { border-bottom: 1px solid $light-gray; }
     }
     td {
-      color: $secondary-color;
+      color: $body-font-color;
       padding: 16px 10px;
       font-weight: 600;
       white-space: nowrap;
@@ -40,12 +41,10 @@
   }
 }
 
-.erp-fileld {
+.erp-field {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  &.ascending { color: $success-color }
-  &.descending { color: $alert-color }
   > .erp_data { margin-right: 10px; }
 }
 

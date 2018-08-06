@@ -29,30 +29,52 @@
 
 
     .filters_content-box
-      section.filters_static-filters.flex-container.collapse.align_cross--center
-        .flex-item.item--8
-          ul.flex-container
-            li.flex-item(
-              *ngFor="let filter of staticFiltersList"
-            )
+      section.filters_static-filters.row.align-middle
+        .columns.small-6
+          ul.row.align-bottom
+            li.columns.small-3
+              button(type="button").btn.btn--bordered.btn_alert.btn_iconed
+                .btn_icon-holder
+                  i(aria-hidden="true").fa.fa-fire
+                .btn_text-holder Whats new
+            li.columns.small-3
               .filter-wrapper
-                label {{ filter.label }}
+                label select currency
                 input(type="text",
-                name="{{ filter.name }}"
-                )
-        .flex-item.item--2
-          .filter_buttons-group
-            | 111111
-        .flex-item.item--2
-          .filter_search-box
-            input(type="search", placeholder="Search")
-            button.btn.btn--search
-              i(aria-hidden="true").fa.fa-search
+                  name="currency"
+                  )
+            li.columns.small-3
+              .filter-wrapper
+                label language
+                input(type="text",
+                  name="language"
+                  )
+            li.columns.small-3
+              .filter-wrapper
+                label select month
+                input(type="text",
+                  name="month"
+                  )
+        .columns.small-2
+          //-.filter_buttons-group.text-center
+            button(type="button").btn.btn--bordered.btn_alert.btn_iconed
+              .btn_icon-holder
+                i(aria-hidden="true").fa.fa-fire
+              .btn_text-holder Whats new
+
+          .can-toggle.demo-rebrand-2
+            input(id="e" type="checkbox")
+            label(for="e")
+              .can-toggle__switch(
+                data-checked="Global",
+                data-unchecked="Partner"
+              )
+
 
 
       section.filters_dinamic-filters
-        ul.flex-container
-          li.flex-item.item--2(
+        ul.row
+          li.columns(
             *ngFor="let filter of dinamicFiltersList"
           )
             .filter-wrapper
@@ -62,8 +84,8 @@
               )
 
 
-      section.flex-container.collapse.align_main--end.action-btns_wrapper
-        .flex-item.flex-item--shrink
+      section.action-btns_wrapper.row.align-right
+        .column.shrink
           .btns-group
             button.btn.btn_iconed.btn_shadowed.btn--secondary(type="button")
               .btn_icon-holder

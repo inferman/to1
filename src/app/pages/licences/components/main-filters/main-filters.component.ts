@@ -13,7 +13,6 @@ export class MainFiltersComponent implements OnInit {
   tabsList = [];
   categoriesList = [];
   dinamicFiltersList = [];
-  staticFiltersList = [];
   mainActiveTab = '';
   secondActiveTab = '';
 
@@ -23,7 +22,6 @@ export class MainFiltersComponent implements OnInit {
     this.tabsList = this.filtersService.getData('tabsList');
     this.categoriesList = this.filtersService.getData('categoriesList');
     this.dinamicFiltersList = this.filtersService.getData('dinamicFiltersList');
-    this.staticFiltersList = this.filtersService.getData('staticFiltersList');
   }
 
   setActiveMainTab(elem) {
