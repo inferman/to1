@@ -1,8 +1,9 @@
 @mixin can-toggle-branding(
   $can-toggle-off-color: #777,
-  $can-toggle-on-color: #fff,
-  $can-toggle-inactive-text: #000,
+  $can-toggle-on-color: #5fc054,
+  $can-toggle-inactive-text: rgba(white, 0.5),
   $can-toggle-transition: cubic-bezier(0,1,0.5,1)
+
 ) {
 
   input[type="checkbox"] {
@@ -11,28 +12,14 @@
       color: rgba($can-toggle-off-color, 0.5);
     }
 
-    &:focus ~ label, &:hover ~ label {
-      .can-toggle__switch {
-        background-color: $can-toggle-off-color;
-        &:after { color: darken($can-toggle-off-color, 10%); }
-      }
-    }
-    &:hover ~label { color: darken($can-toggle-off-color, 5%); }
     &:checked {
-      ~ label {
-        &:hover { color: darken($can-toggle-on-color, 3%); }
-
+      + label {
         .can-toggle__switch {
-          background-color: lighten($can-toggle-on-color, 5%);
-          &:after { color: darken($can-toggle-on-color, 5%); }
-        }
-      }
-
-      &:focus, &:hover {
-        ~ label {
-          .can-toggle__switch {
-            background-color: $can-toggle-on-color;
-            &:after { color: darken($can-toggle-on-color, 10%); }
+          //background-color: lighten($can-toggle-on-color, 5%);
+          background-color: #fff;
+          &:after {
+            background: #000;
+            color: darken($can-toggle-on-color, 5%);
           }
         }
       }
@@ -45,7 +32,8 @@
 
     .can-toggle__switch {
       transition: background-color 0.3s $can-toggle-transition;
-      background: lighten($can-toggle-off-color, 5%);
+      //background: lighten($can-toggle-off-color, 5%);
+      background: #fff;
       border: 2px solid;
       &:before { color: $can-toggle-inactive-text; }
       &:after {
@@ -53,6 +41,7 @@
         -webkit-transition: -webkit-transform 0.3s $can-toggle-transition;
         transition: transform 0.3s $can-toggle-transition;
         color: $can-toggle-off-color;
+        background: #000;
       }
     }
 
@@ -67,7 +56,7 @@
   $can-toggle-offset: 0px,
   $can-toggle-label-font-size: 14px,
   $can-toggle-switch-font-size: 12px,
-  $can-toggle-shadow: 0 3px 3px rgba(black, 0.4)
+  $can-toggle-shadow: none
 ){
   $can-toggle-switch-width: $can-toggle-width/2;
 
@@ -75,19 +64,19 @@
 
     &:focus ~ label, &:hover ~ label {
       .can-toggle__switch {
-        //&:after { box-shadow: $can-toggle-shadow; }
+        &:after { box-shadow: $can-toggle-shadow; }
       }
     }
 
     &:checked {
       ~ label {
         .can-toggle__switch {
-          &:after { transform: translate3d($can-toggle-width - ($can-toggle-switch-width + $can-toggle-offset),0,0); }
+          &:after { transform: translate3d($can-toggle-width - ($can-toggle-switch-width + $can-toggle-offset - 2px),0,0); }
         }
       }
       &:focus, &:hover {
         ~ label {
-          //.can-toggle__switch { &:after { box-shadow: $can-toggle-shadow; } }
+          .can-toggle__switch { &:after { box-shadow: $can-toggle-shadow; } }
         }
       }
     }
@@ -102,6 +91,7 @@
       border-radius: $can-toggle-border-radius;
 
       &:before {
+        color: #000;
         left: $can-toggle-width/2;
         font-size: $can-toggle-switch-font-size;
         line-height: $can-toggle-height;
@@ -112,7 +102,7 @@
 
       &:after {
         //top: $can-toggle-offset;
-        left: $can-toggle-offset;
+        left: $can-toggle-offset - 1px;
         border-radius: $can-toggle-border-radius/2;
         width: $can-toggle-switch-width - $can-toggle-offset;
         line-height: $can-toggle-height - ($can-toggle-offset*2);
@@ -120,9 +110,9 @@
         height: 100%;
       }
 
-      /*&:hover {
+      &:hover {
         &:after { box-shadow: $can-toggle-shadow; }
-      }*/
+      }
     }
   }
 }
@@ -131,7 +121,6 @@
 
 .can-toggle {
   position: relative;
-  *, *:before, *:after { box-sizing: border-box; }
   //overflow: hidden;
 
   input[type="checkbox"] {
@@ -248,10 +237,15 @@
   &.demo-rebrand-2 {
     @include can-toggle-branding
     (
-        #444,  // Off state color
-        #69be28,  // On state color
-        rgba(white, 0.7),  // Off state text color
+        #fff,  // Off state color
+        #fff,  // On state color
+        rgba(white, 1),  // Off state text color
         cubic-bezier(0.860, 0.000, 0.070, 1.000)  // Transition timing function
+
+        //#444,  // Off state color
+        //#69be28,  // On state color
+        //rgba(white, 0.7),  // Off state text color
+        //cubic-bezier(0.860, 0.000, 0.070, 1.000)  // Transition timing function
     );
     @include can-toggle-appearance
     (
@@ -261,6 +255,15 @@
         0px,   // Offset (distance btw switch and box)
         12px,  // Label font size
         12px  // Switch font size
+        none // Switch shadow on hover/focus
+
+
+        //170px, // Toggle width
+        //34px,  // Toggle height
+        //60px,   // Toggle border radius
+        //0px,   // Offset (distance btw switch and box)
+        //12px,  // Label font size
+        //12px  // Switch font size
         //0 4px 4px rgba(black, 0.4) // Switch shadow on hover/focus
     );
   }
