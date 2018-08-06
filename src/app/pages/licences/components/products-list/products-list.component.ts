@@ -19,4 +19,8 @@ export class ProductsListComponent implements OnInit {
     this.productsList = this.productsService.getData('productsList');
   }
 
+  onCheckboxClick(item) {
+    item.checkedRow = !item.checkedRow;
+  }
+
 }

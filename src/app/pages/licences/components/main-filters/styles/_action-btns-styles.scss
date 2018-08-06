@@ -1,19 +1,7 @@
-.action-btns_wrapper {
-  .btn {
-    &--primary {
-      box-shadow: 0px 4px 15px rgba(24, 117, 240, 0.6);
-      transition: box-shadow .2s ease;
-      &:hover {
-        box-shadow: 0px 4px 15px rgba(24, 117, 240, 0.9);
-      }
-    }
-    &--secondary {
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-      transition: box-shadow .2s ease;
-      &:hover {
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-      }
-    }
-  }
-  .btn + .btn { margin-left: 10px; }
+@import "../../../../../../assets/styles/foundation-sites/settings";
+
+.whats-new {
+  background: #FF8642;
+  color: $white;
+
 }

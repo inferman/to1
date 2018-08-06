@@ -1,2 +1,10 @@
 @import "styles/pagination-styles";
 @import "styles/products-table-styles";
+
+.products_top-row {
+  margin-bottom: 25px;
+}
+
+.top-btns-holder {
+  .btn { min-width: 175px; }
+}

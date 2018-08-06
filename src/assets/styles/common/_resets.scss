@@ -49,6 +49,10 @@ select {
     outline-offset: unset;
   }
 }
+input[type="checkbox"] {
+  margin: 0;
+  padding: 0;
+}
 input::-webkit-input-placeholder { color: inherit; }
 input[type="search" i] { -webkit-appearance: none; }
 input[type='search']::-webkit-search-decoration,
@@ -56,4 +60,40 @@ input[type='search']::-webkit-search-cancel-button,
 input[type='search']::-webkit-search-results-button,
 input[type='search']::-webkit-search-results-decoration {
   display: none;
+}
+
+
+
+.checkbox-holder {
+  position: relative;
+  .hidden-checkbox {
+    position: absolute;
+    opacity: 0;
+    left: -9999px;
+    top: 0;
+  }
+}
+
+.fake-checkbox {
+  display: block;
+  color: inherit;
+  cursor: pointer;
+  border: 2px solid;
+  position: relative;
+  height: 12px;
+  width: 12px;
+  &:after {
+    background: transparent;
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: background .15s ease;
+    width: 4px;
+    height: 4px;
+  }
+  input[type="checkbox"]:checked + & {
+    &:after { background: $alert-color; }
+  }
 }

@@ -1,35 +1,57 @@
 
 <div class="products-table-component">
-  <div class="products_pagination-selector">
-    <div class="pagination_header">
-      <div class="picked-value">show 10</div>
-      <div class="icon-holder">
-        <svg class="icon svg-ic-table-arrow">
-          <use xlink:href="../../../../../assets/img/symbol-defs.svg#svg-ic-table-arrow"></use>
-        </svg>
+  <div class="products_top-row row align-justify align-middle collapse products_top-row">
+    <div class="columns shrink">
+      <div class="products_pagination-selector">
+        <div class="pagination_header">
+          <div class="picked-value">show 10</div>
+          <div class="icon-holder">
+            <svg class="icon svg-ic-table-arrow">
+              <use xlink:href="../../../../../assets/img/symbol-defs.svg#svg-ic-table-arrow"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="pagination_body"></div>
       </div>
     </div>
-    <div class="pagination_body"></div>
+    <div class="columns shrink">
+      <div class="top-btns-holder">
+        <button class="btn btn_shadowed btn--primary" type="button">Defaults</button>
+        <button class="btn btn_shadowed btn--secondary" type="button">Defaults margin</button>
+      </div>
+    </div>
   </div>
   <div class="products-table_wrapper">
     <table>
       <thead>
         <tr>
-          <th></th>
-          <th></th>
+          <th>
+            <div class="checkbox-holder">
+              <label>
+                <input class="hidden-checkbox" type="checkbox"/><span class="fake-checkbox"></span>
+              </label>
+            </div>
+          </th>
+          <th><i class="fa fa-calendar" aria-hidden="true"></i></th>
           <th *ngFor="let th of headerItemsList" [class.text-left]="th === 'name'">{{ th }}</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let tr of productsList">
-          <td></td>
+        <tr *ngFor="let tr of productsList; let i = index" [ngClass]="{'active': tr.checkedRow}">
+          <td>
+            <div class="checkbox-holder">
+              <label>
+                <input class="hidden-checkbox" type="checkbox" (click)="onCheckboxClick(tr, i)"/><span class="fake-checkbox"></span>
+              </label>
+            </div>
+          </td>
           <td>{{tr.date}}</td>
           <td class="text-left">{{tr.productName}}</td>
           <td>{{tr.price.value}} {{tr.price.currency}}</td>
           <td>
             <div class="erp-fileld" [ngClass]="tr.erp.status">
-              <div class="erp_data">{{tr.erp.value}} {{tr.erp.currency}}</div>&nbsp;
-              <div class="erp_icon">{{tr.erp.status}}</div>
+              <div class="erp_data">{{tr.erp.value}} {{tr.erp.currency}}</div>
+              <div class="erp-triangle"></div>
             </div>
           </td>
           <td>{{tr.erpMargin.value}} {{tr.erpMargin.measuring}}</td>

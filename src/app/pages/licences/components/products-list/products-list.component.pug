@@ -1,33 +1,53 @@
 .products-table-component
-  .products_pagination-selector
-    .pagination_header
-      .picked-value show 10
-      .icon-holder
-        svg.icon.svg-ic-table-arrow
-          use(xlink:href="../../../../../assets/img/symbol-defs.svg#svg-ic-table-arrow")
-    .pagination_body
+  .products_top-row.row.align-justify.align-middle.collapse.products_top-row
+    .columns.shrink
+      .products_pagination-selector
+        .pagination_header
+          .picked-value show 10
+          .icon-holder
+            svg.icon.svg-ic-table-arrow
+              use(xlink:href="../../../../../assets/img/symbol-defs.svg#svg-ic-table-arrow")
+        .pagination_body
+
+    .columns.shrink
+      .top-btns-holder
+        button(type="button").btn.btn_shadowed.btn--primary Defaults
+        button(type="button").btn.btn_shadowed.btn--secondary Defaults margin
+
 
   .products-table_wrapper
     table
       thead
         tr
           th
+            .checkbox-holder
+              label
+                input(type="checkbox").hidden-checkbox
+                span.fake-checkbox
           th
+            i.fa.fa-calendar(aria-hidden="true")
           th(
             *ngFor="let th of headerItemsList",
             [class.text-left]="th === 'name'"
             ) {{ th }}
       tbody
-        tr(*ngFor="let tr of productsList")
+        tr(
+          *ngFor="let tr of productsList; let i = index",
+          [ngClass]="{'active': tr.checkedRow}"
+        )
           td
+            .checkbox-holder
+              label
+                input(type="checkbox",
+                  (click)="onCheckboxClick(tr, i)").hidden-checkbox
+                span.fake-checkbox
           td {{tr.date}}
           td.text-left {{tr.productName}}
           td {{tr.price.value}} {{tr.price.currency}}
           td
             .erp-fileld( [ngClass]="tr.erp.status" )
               .erp_data {{tr.erp.value}} {{tr.erp.currency}}
-              | &nbsp;
-              .erp_icon {{tr.erp.status}}
+              .erp-triangle
           td {{tr.erpMargin.value}} {{tr.erpMargin.measuring}}
           td {{tr.salesMargin.value}} {{tr.salesMargin.measuring}}
           td {{tr.fixedPrice.value}} {{tr.fixedPrice.currency}}
