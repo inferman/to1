@@ -1,0 +1,32 @@
+
+<header class="header-component">
+  <div class="header-wrapper flex-container align_main--between collapse">
+    <div class="header-col flex-item flex-container collapse align_cross--center">
+      <div class="header_menu-holder flex-item flex-item--shrink">
+        <button class="btn btn-burger" type="button" (click)="onNavClick()">
+          <svg class="icon svg-ic-burger">
+            <use xlink:href="../../../assets/img/symbol-defs.svg#svg-ic-burger"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="header_logo-holder flex-item flex-item--shrink"><img src="../../../assets/img/totalone-logo.svg"/></div>
+    </div>
+    <div class="header-col header_customer-bar flex-item">
+      <ul class="header_actions-list">
+        <li class="header_action-item">
+          <div class="customer_logo">item</div>
+        </li>
+        <li class="header_action-item">
+          <customer-actions-menu [currentUser]="cspData"></customer-actions-menu>
+        </li>
+        <li class="header_action-item">
+          <div class="customer_notifications-bar">item</div>
+        </li>
+        <li class="header_action-item">
+          <div class="home-link">item</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <main-menu></main-menu>
+</header>

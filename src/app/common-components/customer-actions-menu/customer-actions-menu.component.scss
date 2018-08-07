@@ -1,3 +1,5 @@
+@import "../../../assets/styles/foundation-sites/settings";
+
 .customer_settings {
   position: relative;
   cursor: pointer;
@@ -10,7 +12,7 @@
 .customer-icon-holder {
   margin-right: 10px;
   .customer-icon {
-    background: #6071CF;
+    background: $primary-color;
     border-radius: 50%;
     color: #fff;
     position: relative;
@@ -44,15 +46,17 @@
 
 .customer-menu {
   background: #fff;
+  border: 2px solid $header-border-color;
+  border-top-width: 1px;
   position: absolute;
   top: calc(100% + 23px);
-  left: -18px;
-  width: calc(100% + 36px);
+  left: -20px;
+  width: calc(100% + 40px);
   overflow: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
   opacity: 0;
   visibility: hidden;
-  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
+  //box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
   &.active {
     opacity: 1;
     visibility: visible;
@@ -61,7 +65,7 @@
 
 .customer-menu_list {
   color: #B1B7BC;
-  box-shadow: inset 0px 9px 4px -4px rgba(0, 0, 0, 0.1);
+  //box-shadow: inset 0px 9px 4px -4px rgba(0, 0, 0, 0.1);
   > li {
     padding: 10px 14px;
     &:not(:last-child) { border-bottom: 1px solid #F4F4F4; }

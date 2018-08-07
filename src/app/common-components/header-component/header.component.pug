@@ -1,26 +1,51 @@
 header.header-component
-  .header-wrapper.flex-container.align_main--between.collapse
-    .header-col.flex-item.flex-container.collapse.align_cross--center
-      .header_menu-holder.flex-item.flex-item--shrink
-        button(type="button",
-          (click)="onNavClick()"
-        ).btn.btn-burger
-          svg.icon.svg-ic-burger
-            use(xlink:href="../../../assets/img/symbol-defs.svg#svg-ic-burger")
+  .header-wrapper.row.expanded.collapse
+    .column.shrink
+      .row.collapse.align-nested-items
+        .column.shrink.inner-flex.inner-flex--bordered
+          .header_menu-holder
+            button(type="button",
+            (click)="onNavClick()"
+            ).btn.btn-burger
+              .burger-box
+                span.burger-item
+                span.burger-item
+                span.burger-item
+        .column.shrink.inner-flex.inner-flex--bordered
+          .header_logo-holder
+            img(src="../../../assets/img/nexelent-logo.png")
+    .column
+      .header_breadcrumbs
+        ul.breadcrumbs_list
+          li.breadcrumbs_item some 1
+          li.breadcrumbs_item some 2
+          li.breadcrumbs_item some 3
 
-      .header_logo-holder.flex-item.flex-item--shrink
-        img(src="../../../assets/img/totalone-logo.svg")
-    .header-col.header_customer-bar.flex-item
-      ul.header_actions-list
-        li.header_action-item
-          .customer_logo item
-        li.header_action-item
-          customer-actions-menu(
+    .column.shrink
+      .header_customer-bar
+        ul.header_actions-list
+          li.header_action-item
+            .customer_logo
+              img(src="../../../assets/img/customer-logo.svg")
+
+              i(aria-hidden="true").icon.fa.fa-angle-down
+          li.header_action-item
+            customer-actions-menu(
             [currentUser]="cspData"
             )
 
-        li.header_action-item
-          .customer_notifications-bar item
-        li.header_action-item
-          .home-link item
+          li.header_action-item
+            .customer_notifications-bar
+              button(type="button").notification-btn
+                svg.icon.svg-bell-icon.header-icon
+                  use(xlink:href="../../../assets/img/symbol-defs.svg#svg-bell-icon")
+              span.notification-badge.notification-badge--red
+                | 112
+
+          li.header_action-item
+            .cart-box
+              button(type="button")
+                svg.icon.svg-cart-icon.header-icon
+                  use(xlink:href="../../../assets/img/symbol-defs.svg#svg-cart-icon")
+
   main-menu

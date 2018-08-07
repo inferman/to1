@@ -1,3 +1,5 @@
+@import "../../../assets/styles/foundation-sites/settings";
+
 .main-site-navigation {
   position: absolute;
   opacity: 0;
@@ -10,12 +12,17 @@
     transform: translateY(0);
   }
 }
-.menu_list { display: inline-flex; }
+.menu_list {
+  display: inline-flex;
+  line-height: 1.2;
+}
 .menu_list-item {
   display: flex;
-  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
+  border-right: 2px solid $header-border-color;
+  border-bottom: 2px solid $header-border-color;
+  //box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
   position: relative;
-  &:not(:last-child) { margin-right: 2px; }
+  //&:not(:last-child) { borer-right: 2px; }
 }
 .menu_item-box {
   background: #fff;
@@ -28,12 +35,12 @@
   width: 150px;
   &:hover,
   &.active {
-    background: #684aff;
+    background: $primary-color;
     color: #fff;
   }
 }
 .item_icon-holder {
-  color: #684aff;
+  color: $primary-color;
   font-size: 35px;
   transition: color 0.2s ease;
   .menu_item-box:hover > &,

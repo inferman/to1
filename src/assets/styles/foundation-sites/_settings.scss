@@ -75,6 +75,7 @@ $foundation-palette: (
   warning: #ffae00,
   alert: #E560A0,
 );
+$header-border-color: #E1E1E1;
 $light-gray: #F7F7F7;
 $medium-gray: #C1C1C1;
 $dark-gray: #898989;
@@ -156,6 +157,11 @@ $header-styles: (
     'h6': ('font-size': 16),
   ),
 );
+//$list-lineheight: $paragraph-lineheight;
+//$list-margin-bottom: $paragraph-margin-bottom;
+//$list-side-margin: 1.25rem;
+//$list-nested-side-margin: 1.25rem;
+
 $header-text-rendering: optimizeLegibility;
 $small-font-size: 80%;
 $header-small-font-color: $medium-gray;
@@ -175,12 +181,12 @@ $anchor-text-decoration-hover: none;
 $hr-width: $global-width;
 $hr-border: 1px solid $medium-gray;
 $hr-margin: rem-calc(20) auto;
-$list-lineheight: $paragraph-lineheight;
-$list-margin-bottom: $paragraph-margin-bottom;
+$list-side-margin: 0;
+$list-nested-side-margin: 0;
+$list-margin-bottom: 0;
+$list-lineheight: 1;
 $list-style-type: disc;
 $list-style-position: outside;
-$list-side-margin: 1.25rem;
-$list-nested-side-margin: 1.25rem;
 $defnlist-margin-bottom: 1rem;
 $defnlist-term-weight: $global-weight-bold;
 $defnlist-term-margin-bottom: 0.3rem;
