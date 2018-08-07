@@ -1,13 +1,15 @@
 @import "../../../../../../assets/styles/foundation-sites/settings";
 
 .filter-wrapper {
-  color: #659FEC;
+  color: $black;
   font-size: 12px;
   line-height: 14px;
   text-transform: uppercase;
   label {
     display: block;
-    font-weight: 600;
+    font-weight: bold;
+    font-size: inherit;
+    letter-spacing: 0.08em;
     margin-bottom: 12px;
   }
   + .filters-toggle { margin-bottom: 25px; }
@@ -38,22 +40,16 @@ select {
     max-width: 20%;
   }
 }
-
-.filters_static-filters {
-  .filter_buttons-group {
-    //padding: 0 60px;
-  }
-}
-
+//
 .filters_dinamic-filters,
 .filters_static-filters {
   margin-bottom: 30px;
   li { margin-bottom: 20px; }
 }
 .filters_dinamic-filters {
-  opacity: 0;
-  visibility: hidden;
-  position: absolute;
+  // opacity: 0;
+  // visibility: hidden;
+  // position: absolute;
   transition: opacity 0.2s ease, visibility 0.2s ease;
   &.active {
     opacity: 1;
@@ -81,3 +77,45 @@ select {
 }
 
 .switcher-wrapper { display: inline-block; }
+
+.static-btns-list {
+  > li { margin: 0; }
+}
+.static-btns-holder {
+  display: flex;
+  align-items: center;
+  .btn-holder { position: relative; }
+  .btn-holder + .btn-holder { margin-left: 10px; }
+  .btn {
+    box-shadow: 0 4px 15px rgba(188, 188, 188, 0.6);
+    color: $white;
+    min-width: 190px;
+    text-align: center;
+    &--orange { background: $orange; }
+    &--blue { background: $primary-color; }
+    .fa { margin-right: 10px; }
+  }
+}
+
+.additional-info-holder {
+  padding: 20px 0;
+  .additional-box {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    &--top { top: 0; }
+    &--bottom { bottom: 0; }
+  }
+  dl {
+    color: #6F6F6F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 400;
+    margin: 0;
+    dt { margin: 0 5px 0 0; }
+    dd { margin: 0; }
+    &.black-color { color: $black; }
+  }
+}

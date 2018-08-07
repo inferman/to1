@@ -157,10 +157,13 @@ $header-styles: (
     'h6': ('font-size': 16),
   ),
 );
-//$list-lineheight: $paragraph-lineheight;
-//$list-margin-bottom: $paragraph-margin-bottom;
-//$list-side-margin: 1.25rem;
-//$list-nested-side-margin: 1.25rem;
+// $list-lineheight: $paragraph-lineheight;
+// $list-margin-bottom: $paragraph-margin-bottom;
+// $list-side-margin: 1.25rem;
+// $list-nested-side-margin: 1.25rem;
+// $defnlist-margin-bottom: 1rem;
+// $defnlist-term-weight: $global-weight-bold;
+// $defnlist-term-margin-bottom: 0.3rem;
 
 $header-text-rendering: optimizeLegibility;
 $small-font-size: 80%;
@@ -187,9 +190,10 @@ $list-margin-bottom: 0;
 $list-lineheight: 1;
 $list-style-type: disc;
 $list-style-position: outside;
+
 $defnlist-margin-bottom: 1rem;
-$defnlist-term-weight: $global-weight-bold;
-$defnlist-term-margin-bottom: 0.3rem;
+$defnlist-term-weight: inherit;
+$defnlist-term-margin-bottom: 0;
 $blockquote-color: $dark-gray;
 $blockquote-padding: rem-calc(9 20 0 19);
 $blockquote-border: 1px solid $medium-gray;

@@ -30,47 +30,73 @@
       </div>
     </div>
     <div class="filters_content-box">
-      <section class="filters_static-filters row align-middle">
-        <div class="columns small-6">
+      <section class="filters_static-filters row align-middle align-justify">
+        <div class="columns small-8">
           <ul class="row align-bottom">
-            <li class="columns small-3">
+            <li class="columns shrink">
               <button class="btn btn--bordered btn_alert btn_iconed" type="button">
                 <div class="btn_icon-holder"><i class="fa fa-fire" aria-hidden="true"></i></div>
                 <div class="btn_text-holder">Whats new</div>
               </button>
             </li>
-            <li class="columns small-3">
+            <li class="columns">
               <div class="filter-wrapper">
-                <label>select currencys</label>
+                <label>select currency</label>
                 <input type="text" name="currency"/>
               </div>
             </li>
-            <li class="columns small-3">
+            <li class="columns">
               <div class="filter-wrapper">
                 <label>language</label>
                 <input type="text" name="language"/>
               </div>
             </li>
-            <li class="columns small-3">
+            <li class="columns">
               <div class="filter-wrapper">
                 <label>select month</label>
                 <input type="text" name="month"/>
               </div>
             </li>
+            <li class="columns small-3">
+              <div class="filter-wrapper">
+                <label>select pricelist</label>
+              </div>
+              <div class="switcher-wrapper">
+                <div class="can-toggle filters-toggle">
+                  <input id="e" type="checkbox"/>
+                  <label for="e">
+                    <div class="can-toggle__switch" data-checked="Partner" data-unchecked="Global"></div>
+                  </label>
+                </div>
+              </div>
+            </li>
           </ul>
         </div>
-        <div class="columns small-2 small-offset-2">
-          <div class="filter-wrapper">
-            <label>select pricelist</label>
-          </div>
-          <div class="switcher-wrapper">
-            <div class="can-toggle filters-toggle">
-              <input id="e" type="checkbox"/>
-              <label for="e">
-                <div class="can-toggle__switch" data-checked="Partner" data-unchecked="Global"></div>
-              </label>
-            </div>
-          </div>
+        <div class="columns shrink">
+          <ul class="static-btns-list row collapse align-bottom">
+            <li class="column">
+              <div class="static-btns-holder">
+                <div class="btn-holder">
+                  <button class="btn btn--orange" type="button"><i class="fa fa-refresh" aria-hidden="true"></i><span>Reset filters</span></button>
+                </div>
+                <div class="btn-holder additional-info-holder">
+                  <button class="btn btn--blue" type="button"><i class="fa fa-share-square" aria-hidden="true"></i><span>Import products</span></button>
+                  <div class="additional-box additional-box--top">
+                    <dl class="black-color">
+                      <dt>Total products:</dt>
+                      <dd>4,243</dd>
+                    </dl>
+                  </div>
+                  <div class="additional-box additional-box--bottom">
+                    <dl>
+                      <dt>Last successful update:</dt>
+                      <dd>08/27/2018</dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
       </section>
       <section class="filters_dinamic-filters">
@@ -82,28 +108,6 @@
             </div>
           </li>
         </ul>
-      </section>
-      <section class="action-btns_wrapper row align-right">
-        <div class="column shrink">
-          <div class="btns-group">
-            <button class="btn btn_iconed btn_shadowed btn--secondary" type="button">
-              <div class="btn_icon-holder">
-                <svg class="icon svg-office365">
-                  <use xlink:href="../../../../../assets/img/symbol-defs.svg#svg-office365"></use>
-                </svg>
-              </div>
-              <div class="btn_text-holder">Import  product</div>
-            </button>
-            <button class="btn btn_iconed btn_shadowed btn--primary" type="button">
-              <div class="btn_icon-holder">
-                <svg class="icon svg-office365">
-                  <use xlink:href="../../../../../assets/img/symbol-defs.svg#svg-office365"></use>
-                </svg>
-              </div>
-              <div class="btn_text-holder">Reset</div>
-            </button>
-          </div>
-        </div>
       </section>
     </div>
   </div>

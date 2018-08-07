@@ -29,43 +29,63 @@
 
 
     .filters_content-box
-      section.filters_static-filters.row.align-middle
-        .columns.small-6
+      section.filters_static-filters.row.align-middle.align-justify
+        .columns.small-8
           ul.row.align-bottom
-            li.columns.small-3
+            li.columns.shrink
               button(type="button").btn.btn--bordered.btn_alert.btn_iconed
                 .btn_icon-holder
                   i(aria-hidden="true").fa.fa-fire
                 .btn_text-holder Whats new
-            li.columns.small-3
+            li.columns
               .filter-wrapper
-                label select currencys
+                label select currency
                 input(type="text",
                   name="currency"
                   )
-            li.columns.small-3
+            li.columns
               .filter-wrapper
                 label language
                 input(type="text",
                   name="language"
                   )
-            li.columns.small-3
+            li.columns
               .filter-wrapper
                 label select month
                 input(type="text",
                   name="month"
                   )
-        .columns.small-2.small-offset-2
-          .filter-wrapper
-            label select pricelist
-          .switcher-wrapper
-            .can-toggle.filters-toggle
-              input(id="e" type="checkbox")
-              label(for="e")
-                .can-toggle__switch(
-                  data-checked="Partner",
-                  data-unchecked="Global"
-                )
+            li.columns.small-3
+              .filter-wrapper
+                label select pricelist
+              .switcher-wrapper
+                .can-toggle.filters-toggle
+                  input(id="e" type="checkbox")
+                  label(for="e")
+                    .can-toggle__switch(
+                      data-checked="Partner",
+                      data-unchecked="Global")
+        .columns.shrink
+          ul.static-btns-list.row.collapse.align-bottom
+            li.column
+              .static-btns-holder
+                .btn-holder
+                  button(type="button").btn.btn--orange
+                    i(aria-hidden="true").fa.fa-refresh
+                    span Reset filters
+                .btn-holder.additional-info-holder
+                  button(type="button").btn.btn--blue
+                    i(aria-hidden="true").fa.fa-share-square
+                    span Import products
+                  .additional-box.additional-box--top
+                    dl.black-color
+                      dt Total products:
+                      dd 4,243
+                  .additional-box.additional-box--bottom
+                    dl
+                      dt Last successful update:
+                      dd 08/27/2018
+
 
 
 
@@ -79,21 +99,4 @@
               input(type="text",
                 name="{{ filter.name }}"
               )
-
-
-      section.action-btns_wrapper.row.align-right
-        .column.shrink
-          .btns-group
-            button.btn.btn_iconed.btn_shadowed.btn--secondary(type="button")
-              .btn_icon-holder
-                svg.icon.svg-office365
-                  use(xlink:href="../../../../../assets/img/symbol-defs.svg#svg-office365")
-              .btn_text-holder Import  product
-            button.btn.btn_iconed.btn_shadowed.btn--primary(type="button")
-              .btn_icon-holder
-                svg.icon.svg-office365
-                  use(xlink:href="../../../../../assets/img/symbol-defs.svg#svg-office365")
-              .btn_text-holder Reset
-
-
 
