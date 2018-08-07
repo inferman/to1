@@ -5,13 +5,14 @@
   font-size: 12px;
   line-height: 14px;
   text-transform: uppercase;
+  label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  + .filters-toggle { margin-bottom: 25px; }
 }
 
-label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 12px;
-}
 input,
 input[type="search"],
 select {
@@ -50,6 +51,15 @@ select {
   li { margin-bottom: 20px; }
 }
 .filters_dinamic-filters {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+  }
   li {
     flex: 0 0 12.5%;
     max-width: 12.5%;
@@ -69,3 +79,5 @@ select {
   .btn_text-holder { padding: 0 20px 0 40px; }
   .fa { font-size: 14px; }
 }
+
+.switcher-wrapper { display: inline-block; }

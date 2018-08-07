@@ -39,7 +39,7 @@
                 .btn_text-holder Whats new
             li.columns.small-3
               .filter-wrapper
-                label select currency
+                label select currencys
                 input(type="text",
                   name="currency"
                   )
@@ -55,20 +55,17 @@
                 input(type="text",
                   name="month"
                   )
-        .columns.small-2
-          //-.filter_buttons-group.text-center
-            button(type="button").btn.btn--bordered.btn_alert.btn_iconed
-              .btn_icon-holder
-                i(aria-hidden="true").fa.fa-fire
-              .btn_text-holder Whats new
-
-          .can-toggle.demo-rebrand-2
-            input(id="e" type="checkbox")
-            label(for="e")
-              .can-toggle__switch(
-                data-checked="Global",
-                data-unchecked="Partner"
-              )
+        .columns.small-2.small-offset-2
+          .filter-wrapper
+            label select pricelist
+          .switcher-wrapper
+            .can-toggle.filters-toggle
+              input(id="e" type="checkbox")
+              label(for="e")
+                .can-toggle__switch(
+                  data-checked="Partner",
+                  data-unchecked="Global"
+                )
 
 
 
