@@ -45,7 +45,7 @@ select {
   }
 }
 .filters_static-filters {
-  padding: 0 10px;
+  padding: 0 10px 20px;
   margin-bottom: 30px;
 }
 .dinamic-filters_list {
@@ -123,13 +123,12 @@ select {
 }
 
 .additional-info-holder {
-  padding: 20px 0;
   .additional-box {
     position: absolute;
     left: 0;
     width: 100%;
-    &--top { top: 0; }
-    &--bottom { bottom: 0; }
+    &--top { top: -20px; }
+    &--bottom { bottom: -20px; }
   }
   dl {
     color: #6F6F6F;
