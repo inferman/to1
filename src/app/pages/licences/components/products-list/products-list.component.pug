@@ -1,19 +1,39 @@
 .products-table-component
-  .products_top-row.row.align-justify.align-middle.collapse.products_top-row
-    .columns.shrink
-      .products_pagination-selector
-        .pagination_header
-          .picked-value show 10
-          .icon-holder
-            svg.icon.svg-ic-table-arrow
-              use(xlink:href="../../../../../assets/img/symbol-defs.svg#svg-ic-table-arrow")
-        .pagination_body
+  .products_top-row.row.align-justify.align-middle.collapse
+    .top_filters-row.column.small-6
+      .row.align-middle
+        .column.small-3
+          dl.info-list
+            dt Total items:
+            dd 4,243
+        .column.small-9
+          .inputs-holder
+            .search-box
+              i(aria-hidden="true").fa.fa-search
+              input(type="text", placeholder="Search")
+            .select-box
+              select
+                option Select Customer
+    .top_btns-row.column.shrink
+      .export_inner-wrapper
+        span.export_label Export as:
+        .export_btns-group
+          button(type="button").btn
+            .inner-holder
+              svg.icon.svg-excel-icon
+                use(xlink:href="../../../../../assets/img/symbol-defs.svg#svg-excel-icon")
+              span Excel
+          button(type="button").btn
+            .inner-holder
+              svg.icon.svg-pdf-icon
+                use(xlink:href="../../../../../assets/img/symbol-defs.svg#svg-pdf-icon")
+              span PDF
 
-    .columns.shrink
-      .top-btns-holder
-        button(type="button").btn.btn_shadowed.btn--primary Defaults
-        button(type="button").btn.btn_shadowed.btn--secondary Defaults margin
-
+          button(type="button").btn
+            .inner-holder
+              svg.icon.svg-csv-icon
+                use(xlink:href="../../../../../assets/img/symbol-defs.svg#svg-csv-icon")
+              span CSV
 
   .products-table_wrapper
     table

@@ -69,12 +69,15 @@ $global-font-size: 100%;
 $global-width: rem-calc(1400);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #1875F0,
-  secondary: #659FEC,
-  success: #64D397,
-  warning: #ffae00,
-  alert: #E560A0,
+  primary: #006DCE,
+  secondary: #FFB901,
+  third: #191919,
+  success: #9BC702,
+  warning: #FFB901,
+  alert: #F25022
 );
+
+$third-color: get-color(third);
 $header-border-color: #E1E1E1;
 $light-gray: #F7F7F7;
 $medium-gray: #C1C1C1;
@@ -190,6 +193,8 @@ $list-margin-bottom: 0;
 $list-lineheight: 1;
 $list-style-type: disc;
 $list-style-position: outside;
+
+$normal-fz: rem-calc(14);
 
 $defnlist-margin-bottom: 1rem;
 $defnlist-term-weight: inherit;

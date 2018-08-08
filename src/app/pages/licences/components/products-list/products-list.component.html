@@ -1,23 +1,53 @@
 
 <div class="products-table-component">
-  <div class="products_top-row row align-justify align-middle collapse products_top-row">
-    <div class="columns shrink">
-      <div class="products_pagination-selector">
-        <div class="pagination_header">
-          <div class="picked-value">show 10</div>
-          <div class="icon-holder">
-            <svg class="icon svg-ic-table-arrow">
-              <use xlink:href="../../../../../assets/img/symbol-defs.svg#svg-ic-table-arrow"></use>
-            </svg>
+  <div class="products_top-row row align-justify align-middle collapse">
+    <div class="top_filters-row column small-6">
+      <div class="row align-middle">
+        <div class="column small-3">
+          <dl class="info-list">
+            <dt>Total items:</dt>
+            <dd>4,243</dd>
+          </dl>
+        </div>
+        <div class="column small-9">
+          <div class="inputs-holder">
+            <div class="search-box"><i class="fa fa-search" aria-hidden="true"></i>
+              <input type="text" placeholder="Search"/>
+            </div>
+            <div class="select-box">
+              <select>
+                <option>Select Customer</option>
+              </select>
+            </div>
           </div>
         </div>
-        <div class="pagination_body"></div>
       </div>
     </div>
-    <div class="columns shrink">
-      <div class="top-btns-holder">
-        <button class="btn btn_shadowed btn--primary" type="button">Defaults</button>
-        <button class="btn btn_shadowed btn--secondary" type="button">Defaults margin</button>
+    <div class="top_btns-row column shrink">
+      <div class="export_inner-wrapper"><span class="export_label">Export as:</span>
+        <div class="export_btns-group">
+          <button class="btn" type="button">
+            <div class="inner-holder">
+              <svg class="icon svg-excel-icon">
+                <use xlink:href="../../../../../assets/img/symbol-defs.svg#svg-excel-icon"></use>
+              </svg><span>Excel</span>
+            </div>
+          </button>
+          <button class="btn" type="button">
+            <div class="inner-holder">
+              <svg class="icon svg-pdf-icon">
+                <use xlink:href="../../../../../assets/img/symbol-defs.svg#svg-pdf-icon"></use>
+              </svg><span>PDF</span>
+            </div>
+          </button>
+          <button class="btn" type="button">
+            <div class="inner-holder">
+              <svg class="icon svg-csv-icon">
+                <use xlink:href="../../../../../assets/img/symbol-defs.svg#svg-csv-icon"></use>
+              </svg><span>CSV</span>
+            </div>
+          </button>
+        </div>
       </div>
     </div>
   </div>
