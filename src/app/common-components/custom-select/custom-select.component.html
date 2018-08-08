@@ -1,5 +1,5 @@
 
-<div class="select-wrapper">
+<div class="select-wrapper" [ngClass]="{'select--bordered': config}">
   <div class="select_header" (click)="toggleListItems()">
     <div class="select_choosen-item">Select Customer</div><i class="fa" aria-hidden="true" [ngClass]="isActive ? 'fa-angle-up' : 'fa-angle-down'"></i>
   </div>

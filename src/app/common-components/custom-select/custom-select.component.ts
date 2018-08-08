@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'custom-select',
@@ -6,12 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./custom-select.component.scss']
 })
 export class CustomSelectComponent implements OnInit {
-
+  @Input() config: {};
   isActive = true;
   isMultipleSelect = false;
   constructor() { }
 
   ngOnInit() {
+    console.log(this.config);
   }
 
   toggleListItems() {
