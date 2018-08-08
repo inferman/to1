@@ -10,6 +10,7 @@ import {CustomerActionsMenuComponent} from './common-components/customer-actions
 import {MainMenuComponent} from './common-components/main-menu/main-menu.component';
 import {MenuService} from './services/menu-service.service';
 
+
 export const ROUTES: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
   { path: 'dashboard', loadChildren: './pages/dashboard/dashboard.module#DashboardModule' },

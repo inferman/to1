@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import {LicencesComponent} from './licences.component';
 import {MainFiltersComponent} from './components/main-filters/main-filters.component';
 import {ProductsListComponent} from './components/products-list/products-list.component';
+import {CustomSelectComponent} from '../../common-components/custom-select/custom-select.component';
 
 // routes
 export const ROUTES: Routes = [
@@ -16,7 +17,8 @@ export const ROUTES: Routes = [
   declarations: [
     LicencesComponent,
     MainFiltersComponent,
-    ProductsListComponent
+    ProductsListComponent,
+    CustomSelectComponent
   ],
   imports: [
     CommonModule,

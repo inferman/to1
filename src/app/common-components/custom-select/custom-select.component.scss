@@ -1,0 +1,85 @@
+@import "../../../assets/styles/foundation-sites/settings";
+
+$fz: $normal-fz - rem-calc(2);
+
+input,
+[type="text"] {
+  border: none;
+  font-size: $fz;
+  padding-left: 0;
+  padding-right: 0;
+  &:focus { outline: none; }
+}
+
+.select-wrapper {
+  background: $white;
+  color: $black;
+  position: relative;
+  font-size: $fz;
+  &.select--bordered { border-bottom: 1px solid $input-border-color; }
+  &:not(.select--bordered) { border-radius: 5px; }
+}
+.select_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 8px 12px;
+  .select--bordered & {
+    border: 1px solid $input-border-color;
+    border-bottom: none;
+  }
+
+  .select_choosen-item {
+    flex: 1 1 0%;
+    padding-right: 10px;
+  }
+  .fa {
+    color: #aaaaaa;
+    font-size: $normal-fz + rem-calc(3);
+    flex: 0 0 10px;
+  }
+}
+
+.select_body {
+  background: $white;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.08);
+  position: absolute;
+  top: calc(100% - 2px);
+  left: 0;
+  width: 100%;
+  .select--bordered & {
+    border: 1px solid $input-border-color;
+    border-radius: 0;
+  }
+}
+.select_search-box {
+  position: relative;
+  padding: 0 10px 0 30px;
+  overflow: hidden;
+  .select--bordered & {
+    outline: 1px solid $input-border-color;
+    border-top-color: transparent;
+    transition: outline-color .2s ease;
+    &:focus-within { outline-color: $primary-color; }
+  }
+  .fa {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+.select_items-list {
+  padding: 12px;
+  max-height: 125px;
+  overflow-y: auto;
+  color: $black;
+  font-size: $fz;
+  > li {
+    &:not(:last-child) { margin-bottom: 10px; }
+  }
+  .item-title { cursor: pointer; }
+}
