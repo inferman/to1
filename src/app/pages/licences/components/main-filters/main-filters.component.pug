@@ -90,7 +90,14 @@
 
 
       section.filters_dinamic-filters
-        ul.row
+        .dinamic-filters_spoiler(
+          (click)="toggleDynamicFilters()" )
+          .text-box
+            span filters
+            i.fa(aria-hidden="true",
+              [ngClass]="isDynamicFiltersActive ? 'fa-angle-down' : 'fa-angle-up'" )
+        ul.row.dinamic-filters_list(
+          [class.active]="isDynamicFiltersActive" )
           li.columns(
             *ngFor="let filter of dinamicFiltersList"
           )

@@ -15,6 +15,7 @@ export class MainFiltersComponent implements OnInit {
   dinamicFiltersList = [];
   mainActiveTab = '';
   secondActiveTab = '';
+  isDynamicFiltersActive = false;
 
   constructor(private filtersService: FiltersService) { }
 
@@ -34,6 +35,11 @@ export class MainFiltersComponent implements OnInit {
     if (elem.title !== this.secondActiveTab) {
       this.secondActiveTab = elem.title;
     }
+  }
+
+  toggleDynamicFilters() {
+    this.isDynamicFiltersActive = !this.isDynamicFiltersActive;
+    console.log(this.isDynamicFiltersActive);
   }
 
 }

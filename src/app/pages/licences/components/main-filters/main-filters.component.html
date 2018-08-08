@@ -100,7 +100,10 @@
         </div>
       </section>
       <section class="filters_dinamic-filters">
-        <ul class="row">
+        <div class="dinamic-filters_spoiler" (click)="toggleDynamicFilters()">
+          <div class="text-box"><span>filters</span><i class="fa" aria-hidden="true" [ngClass]="isDynamicFiltersActive ? 'fa-angle-down' : 'fa-angle-up'"></i></div>
+        </div>
+        <ul class="row dinamic-filters_list" [class.active]="isDynamicFiltersActive">
           <li class="columns" *ngFor="let filter of dinamicFiltersList">
             <div class="filter-wrapper">
               <label>{{ filter.label }}</label>
