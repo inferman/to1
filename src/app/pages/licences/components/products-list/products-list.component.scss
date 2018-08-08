@@ -11,7 +11,7 @@
 }
 
 .top_filters-row {
-  color: #595959;
+  color: $grey-text;
   input,
   select { border: none; }
   .info-list {
@@ -53,26 +53,25 @@
   }
 }
 
-.top_btns-row {
-
-}
 .export_inner-wrapper {
   display: flex;
   align-items: center;
-  color: #595959;
+  color: $grey-text;
   font-size: $normal-fz - rem-calc(2);
 }
 .export_label {
-  font-weight: 600;
+  font-weight: 800;
   margin-right: 25px;
 }
 .export_btns-group {
   .btn {
-    border: 1px solid #595959;
     border-radius: 3px;
-    color: #595959;
-    padding: 12px;
+    color: $grey-text;
+    border: 1px solid;
+    padding: 10px;
     min-width: 98px;
+    transition: color .3s ease;
+    &:hover { color: $primary-color; }
   }
   .inner-holder {
     display: flex;

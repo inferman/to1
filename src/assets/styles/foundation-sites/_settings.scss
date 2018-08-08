@@ -74,10 +74,12 @@ $foundation-palette: (
   third: #191919,
   success: #9BC702,
   warning: #FFB901,
-  alert: #F25022
+  alert: #F25022,
+  grey-text: #595959
 );
 
 $third-color: get-color(third);
+$grey-text: get-color(grey-text);
 $header-border-color: #E1E1E1;
 $light-gray: #F7F7F7;
 $medium-gray: #C1C1C1;
