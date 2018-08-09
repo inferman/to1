@@ -1,3 +1,5 @@
+@import "../../../../../../assets/styles/foundation-sites/settings";
+
 .filters_navigation-list {
   display: flex;
   overflow: hidden;
@@ -15,7 +17,7 @@
   background: #fff;
   border-radius: 3px 3px 0 0;
   box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.15);
-  color: #B2B2B2;
+  color: $primary-text-color;
   cursor: pointer;
   flex: 0 0 182px;
   font-size: 12px;
@@ -26,7 +28,7 @@
   text-align: center;
   &.active {
     box-shadow: none;
-    color: #1875F0;
+    color: $primary-color;
     position: relative;
     z-index: 2;
   }

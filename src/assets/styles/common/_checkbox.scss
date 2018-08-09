@@ -1,0 +1,33 @@
+.checkbox-holder {
+  position: relative;
+  .hidden-checkbox {
+    position: absolute;
+    opacity: 0;
+    left: -9999px;
+    top: 0;
+  }
+}
+
+.fake-checkbox {
+  display: block;
+  color: inherit;
+  cursor: pointer;
+  border: 2px solid;
+  position: relative;
+  height: 12px;
+  width: 12px;
+  &:after {
+    background: transparent;
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: background .15s ease;
+    width: 5px;
+    height: 5px;
+  }
+  input[type="checkbox"]:checked + & {
+    &:after { background: $primary-color; }
+  }
+}

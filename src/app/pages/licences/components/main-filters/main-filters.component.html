@@ -34,9 +34,12 @@
         <div class="columns small-8">
           <ul class="row align-bottom">
             <li class="columns shrink">
-              <button class="btn btn--bordered btn_alert btn_iconed" type="button">
-                <div class="btn_icon-holder"><i class="fa fa-fire" aria-hidden="true"></i></div>
-                <div class="btn_text-holder">Whats new</div>
+              <button class="btn btn_alert btn--rounded" type="button">
+                <div class="inner-holder">
+                  <svg class="btn-icon icon svg-fire-icon">
+                    <use xlink:href="../../../../../assets/img/symbol-defs.svg#svg-fire-icon"></use>
+                  </svg><span>Whats new</span>
+                </div>
               </button>
             </li>
             <li class="columns">
@@ -77,12 +80,16 @@
             <li class="column">
               <div class="static-btns-holder">
                 <div class="btn-holder">
-                  <button class="btn btn--orange" type="button"><i class="fa fa-refresh" aria-hidden="true"></i><span>Reset filters</span></button>
+                  <button class="btn btn--color-filled btn--black" type="button">
+                    <div class="inner-holder"><i class="btn-icon fa fa-refresh" aria-hidden="true"></i><span>Reset filters</span></div>
+                  </button>
                 </div>
                 <div class="btn-holder additional-info-holder">
-                  <button class="btn btn--blue" type="button"><i class="fa fa-share-square" aria-hidden="true"></i><span>Import products</span></button>
+                  <button class="btn btn--color-filled btn--blue" type="button">
+                    <div class="inner-holder"><i class="btn-icon fa fa-share-square" aria-hidden="true"></i><span>Import products</span></div>
+                  </button>
                   <div class="additional-box additional-box--top">
-                    <dl class="black-color">
+                    <dl>
                       <dt>Total products:</dt>
                       <dd>4,243</dd>
                     </dl>
@@ -103,7 +110,7 @@
         <div class="dinamic-filters_spoiler" (click)="toggleDynamicFilters()">
           <div class="text-box"><span>filters</span><i class="fa" aria-hidden="true" [ngClass]="isDynamicFiltersActive ? 'fa-angle-down' : 'fa-angle-up'"></i></div>
         </div>
-        <ul class="row dinamic-filters_list" [class.active]="isDynamicFiltersActive">
+        <ul class="row dinamic-filters_list" *ngIf="isDynamicFiltersActive">
           <li class="columns" *ngFor="let filter of dinamicFiltersList">
             <div class="filter-wrapper">
               <label>{{ filter.label }}</label>

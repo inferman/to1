@@ -1,5 +1,3 @@
-@import "../foundation-sites/settings";
-$light-gray: #ABABAB;
 @mixin can-toggle-branding(
   $can-toggle-off-color: #777,
   $can-toggle-on-color: #5fc054,
@@ -228,20 +226,20 @@ $light-gray: #ABABAB;
     (
         $can-toggle-off-color: $white,
         $can-toggle-on-color: $white,
-        $can-toggle-inactive-text: $light-gray,
+        $can-toggle-inactive-text: $primary-text-color,
         $can-toggle-transition: cubic-bezier(0.860, 0.000, 0.070, 1.000),
-        $can-toggle-caret-color: $orange
+        $can-toggle-caret-color: $secondary-color
     );
     @include can-toggle-appearance
     (
-        $can-toggle-width: 160px,             // Toggle width
-        $can-toggle-height: 34px,             // Toggle height
-        $can-toggle-border-radius: 60px,      // Toggle border radius
-        $can-toggle-offset: 0px,              // Offset (distance btw switch and box)
-        $can-toggle-label-font-size: 12px,    // Label font size
-        $can-toggle-switch-font-size: 12px,   // Switch font size
-        $can-toggle-shadow: none,             // Switch shadow on hover/focus
-        $can-toggle-inactive-text: $light-gray
+        $can-toggle-width: 170px,                 // Toggle width
+        $can-toggle-height: 34px,                 // Toggle height
+        $can-toggle-border-radius: 60px,          // Toggle border radius
+        $can-toggle-offset: 0px,                  // Offset (distance btw switch and box)
+        $can-toggle-label-font-size: 12px,        // Label font size
+        $can-toggle-switch-font-size: 12px,       // Switch font size
+        $can-toggle-shadow: none,                 // Switch shadow on hover/focus
+        $can-toggle-inactive-text: $primary-text-color
     );
   }
 

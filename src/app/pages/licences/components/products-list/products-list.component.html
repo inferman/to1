@@ -1,21 +1,18 @@
 
 <div class="products-table-component">
   <div class="products_top-row row align-justify align-middle collapse">
-    <div class="top_filters-row column small-6">
+    <div class="top_filters-row column small-4">
       <div class="row collapse align-middle">
-        <div class="column small-3">
+        <div class="column small-4">
           <dl class="info-list">
             <dt>Total items:</dt>
             <dd>4,243</dd>
           </dl>
         </div>
-        <div class="column small-9">
+        <div class="column small-8">
           <div class="inputs-holder">
             <div class="search-box"><i class="fa fa-search" aria-hidden="true"></i>
               <input type="text" placeholder="Search"/>
-            </div>
-            <div class="select-box">
-              <custom-select [config]="prop"></custom-select>
             </div>
           </div>
         </div>
@@ -24,23 +21,23 @@
     <div class="top_btns-row column shrink">
       <div class="export_inner-wrapper"><span class="export_label">Export as:</span>
         <div class="export_btns-group">
-          <button class="btn" type="button">
+          <button class="btn btn--bordered" type="button">
             <div class="inner-holder">
-              <svg class="icon svg-excel-icon">
+              <svg class="btn-icon icon svg-excel-icon">
                 <use xlink:href="../../../../../assets/img/symbol-defs.svg#svg-excel-icon"></use>
               </svg><span>Excel</span>
             </div>
           </button>
-          <button class="btn" type="button">
+          <button class="btn btn--bordered" type="button">
             <div class="inner-holder">
-              <svg class="icon svg-pdf-icon">
+              <svg class="btn-icon icon svg-pdf-icon">
                 <use xlink:href="../../../../../assets/img/symbol-defs.svg#svg-pdf-icon"></use>
               </svg><span>PDF</span>
             </div>
           </button>
-          <button class="btn" type="button">
+          <button class="btn btn--bordered" type="button">
             <div class="inner-holder">
-              <svg class="icon svg-csv-icon">
+              <svg class="btn-icon icon svg-csv-icon">
                 <use xlink:href="../../../../../assets/img/symbol-defs.svg#svg-csv-icon"></use>
               </svg><span>CSV</span>
             </div>
@@ -88,6 +85,7 @@
           <td>{{tr.effectiveSalesPrice.value}} {{tr.effectiveSalesPrice.currency}}</td>
           <td>{{tr.effectiveSalesMargin.value}} {{tr.effectiveSalesMargin.measuring}}</td>
           <td>{{tr.discountType}}</td>
+          <td>{{tr.discountLevel}}</td>
           <td>{{tr.discountTable}}</td>
         </tr>
       </tbody>

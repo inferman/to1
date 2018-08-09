@@ -15,28 +15,26 @@
   th {
     font-weight: 600;
     letter-spacing: 0.08em;
+    line-height: 1.2;
     max-width: 120px;
     padding: {
-      top: rem-calc(22);
-      bottom: rem-calc(22);
+      top: 1rem;
+      bottom: 1rem;
     }
     &:not(.text-left) { text-align: center; }
   }
   tbody {
     > tr {
       transition: background .2s ease;
-      &.active { background: rgba(24, 117, 240, 0.1); }
-      &:not(:last-child) { border-bottom: 1px solid $light-gray; }
+      &.active { background: $light-gray; }
+      &:not(:last-child) { border-bottom: 1px solid $white; }
     }
     td {
-      color: $body-font-color;
+      color: $secondary-text-color;
       padding: 16px 10px;
       font-weight: 600;
       white-space: nowrap;
       &:not(.text-left) { text-align: center; }
-    }
-    .fake-checkbox {
-      color: #9A9A9A;
     }
   }
 }
@@ -61,4 +59,11 @@
     border-width: 10px 5px 0 5px;
     border-color: $alert-color transparent transparent transparent;
   }
+}
+
+.fake-checkbox {
+  thead input[type="checkbox"]:checked + & {
+    &:after { background: $white; }
+  }
+  tbody input[type="checkbox"]:checked + & { color: $primary-color; }
 }

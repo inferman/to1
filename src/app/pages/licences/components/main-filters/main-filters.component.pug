@@ -33,10 +33,11 @@
         .columns.small-8
           ul.row.align-bottom
             li.columns.shrink
-              button(type="button").btn.btn--bordered.btn_alert.btn_iconed
-                .btn_icon-holder
-                  i(aria-hidden="true").fa.fa-fire
-                .btn_text-holder Whats new
+              button(type="button").btn.btn_alert.btn--rounded
+                .inner-holder
+                  svg.btn-icon.icon.svg-fire-icon
+                    use(xlink:href="../../../../../assets/img/symbol-defs.svg#svg-fire-icon")
+                  span Whats new
             li.columns
               .filter-wrapper
                 label select currency
@@ -68,15 +69,17 @@
             li.column
               .static-btns-holder
                 .btn-holder
-                  button(type="button").btn.btn--orange
-                    i(aria-hidden="true").fa.fa-refresh
-                    span Reset filters
+                  button(type="button").btn.btn--color-filled.btn--black
+                    .inner-holder
+                      i(aria-hidden="true").btn-icon.fa.fa-refresh
+                      span Reset filters
                 .btn-holder.additional-info-holder
-                  button(type="button").btn.btn--blue
-                    i(aria-hidden="true").fa.fa-share-square
-                    span Import products
+                  button(type="button").btn.btn--color-filled.btn--blue
+                    .inner-holder
+                      i(aria-hidden="true").btn-icon.fa.fa-share-square
+                      span Import products
                   .additional-box.additional-box--top
-                    dl.black-color
+                    dl
                       dt Total products:
                       dd 4,243
                   .additional-box.additional-box--bottom
@@ -94,8 +97,7 @@
             span filters
             i.fa(aria-hidden="true",
               [ngClass]="isDynamicFiltersActive ? 'fa-angle-down' : 'fa-angle-up'" )
-        ul.row.dinamic-filters_list(
-          [class.active]="isDynamicFiltersActive" )
+        ul.row.dinamic-filters_list(*ngIf="isDynamicFiltersActive")
           li.columns(
             *ngFor="let filter of dinamicFiltersList"
           )

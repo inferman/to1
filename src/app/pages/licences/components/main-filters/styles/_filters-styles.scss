@@ -49,16 +49,7 @@ select {
   margin-bottom: 30px;
 }
 .dinamic-filters_list {
-  opacity: 0;
-  visibility: hidden;
-  position: absolute;
   padding: 25px 10px 0;
-  transition: opacity 0.2s ease, visibility 0.2s ease;
-  &.active {
-    opacity: 1;
-    visibility: visible;
-    position: relative;
-  }
   li {
     flex: 0 0 14.28%;
     max-width: 14.28%;
@@ -66,7 +57,7 @@ select {
   }
 }
 .dinamic-filters_spoiler {
-  background: #F3F8FF;
+  background: $light-gray;
   cursor: pointer;
   font-size: 0;
   .text-box {
@@ -74,7 +65,7 @@ select {
     align-items: center;
     justify-content: center;
     font-size: 12px;
-    color: $primary-color;
+    color: $primary-text-color;
     font-weight: 800;
     letter-spacing: 0.23em;
     line-height: 1;
@@ -88,17 +79,11 @@ select {
 }
 
 .btn_alert {
-  background: $orange;
+  background: $alert-color;
   color: $white;
   font-size: 10px;
   font-weight: 400;
-  min-height: 34px;
-  height: 34px;
-  border-radius: 34px;
-  transition: background .2s ease;
-  &:hover { background: darken($orange, 10%); }
-  .btn_text-holder { padding: 0 20px 0 40px; }
-  .fa { font-size: 14px; }
+  &:hover { background: darken($alert-color, 10%); }
 }
 
 .switcher-wrapper { display: inline-block; }
@@ -112,13 +97,9 @@ select {
   .btn-holder { position: relative; }
   .btn-holder + .btn-holder { margin-left: 10px; }
   .btn {
-    box-shadow: 0 4px 15px rgba(188, 188, 188, 0.6);
     color: $white;
-    min-width: 190px;
-    text-align: center;
-    &--orange { background: $orange; }
+    &--black { background: $third-color; }
     &--blue { background: $primary-color; }
-    .fa { margin-right: 10px; }
   }
 }
 
@@ -131,7 +112,7 @@ select {
     &--bottom { bottom: -20px; }
   }
   dl {
-    color: #6F6F6F;
+    color: $primary-text-color;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -140,6 +121,5 @@ select {
     margin: 0;
     dt { margin: 0 5px 0 0; }
     dd { margin: 0; }
-    &.black-color { color: $black; }
   }
 }

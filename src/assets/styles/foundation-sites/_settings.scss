@@ -75,14 +75,15 @@ $foundation-palette: (
   success: #9BC702,
   warning: #FFB901,
   alert: #F25022,
-  grey-text: #595959
+  primary-text: #595959,
 );
 
 $third-color: get-color(third);
-$grey-text: get-color(grey-text);
+$primary-text-color: get-color(primary-text);
+$secondary-text-color: get-color(third);
 $header-border-color: #E1E1E1;
 $input-border-color: #DFDFDF;
-$light-gray: #F7F7F7;
+$light-gray: #F1F1F1;
 $medium-gray: #C1C1C1;
 $dark-gray: #898989;
 $black: #000000;

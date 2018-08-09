@@ -1,5 +1,5 @@
 export class ProductsTableService {
-  tableHeaderFields = [ 'name', 'list price', 'erp', 'erp margin', 'sales margin', 'fixed $', 'effective sales price', 'effective sales margin', 'discount type', 'discount table' ];
+  tableHeaderFields = [ 'name', 'list price', 'erp', 'erp margin', 'sales margin', 'fixed $', 'effective sales price', 'effective sales margin', 'discount type', 'discount level', 'discount table' ];
 
   productsList = [
     {
@@ -14,6 +14,7 @@ export class ProductsTableService {
       effectiveSalesPrice: { value: 74.92, currency: 'CHF' },
       effectiveSalesMargin: { value: 15.50, measuring: '%' },
       discountType: 'D',
+      discountLevel: 0,
       discountTable: 'Azure discount table #1',
       id: 1
     },
@@ -29,6 +30,7 @@ export class ProductsTableService {
       effectiveSalesPrice: { value: 74.92, currency: 'CHF' },
       effectiveSalesMargin: { value: 18.50, measuring: '%' },
       discountType: 'F',
+      discountLevel: 2,
       discountTable: 'Azure discount table #2',
       id: 2
     },
@@ -44,6 +46,7 @@ export class ProductsTableService {
       effectiveSalesPrice: { value: 74.92, currency: 'CHF' },
       effectiveSalesMargin: { value: 5.00, measuring: '%' },
       discountType: 'D',
+      discountLevel: 9,
       discountTable: 'Azure discount table #3',
       id: 3
     },
@@ -59,6 +62,7 @@ export class ProductsTableService {
       effectiveSalesPrice: { value: 74.92, currency: 'CHF' },
       effectiveSalesMargin: { value: 25.00, measuring: '%' },
       discountType: 'F',
+      discountLevel: 2,
       discountTable: 'Azure discount table #4',
       id: 4
     }

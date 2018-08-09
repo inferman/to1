@@ -1,38 +1,36 @@
 .products-table-component
   .products_top-row.row.align-justify.align-middle.collapse
-    .top_filters-row.column.small-6
+    .top_filters-row.column.small-4
       .row.collapse.align-middle
-        .column.small-3
+        .column.small-4
           dl.info-list
             dt Total items:
             dd 4,243
-        .column.small-9
+        .column.small-8
           .inputs-holder
             .search-box
               i(aria-hidden="true").fa.fa-search
               input(type="text", placeholder="Search")
-            .select-box
+            //-.select-box
               custom-select([config]="prop")
-              //-select
-                option Select Customer
     .top_btns-row.column.shrink
       .export_inner-wrapper
         span.export_label Export as:
         .export_btns-group
-          button(type="button").btn
+          button(type="button").btn.btn--bordered
             .inner-holder
-              svg.icon.svg-excel-icon
+              svg.btn-icon.icon.svg-excel-icon
                 use(xlink:href="../../../../../assets/img/symbol-defs.svg#svg-excel-icon")
               span Excel
-          button(type="button").btn
+          button(type="button").btn.btn--bordered
             .inner-holder
-              svg.icon.svg-pdf-icon
+              svg.btn-icon.icon.svg-pdf-icon
                 use(xlink:href="../../../../../assets/img/symbol-defs.svg#svg-pdf-icon")
               span PDF
 
-          button(type="button").btn
+          button(type="button").btn.btn--bordered
             .inner-holder
-              svg.icon.svg-csv-icon
+              svg.btn-icon.icon.svg-csv-icon
                 use(xlink:href="../../../../../assets/img/symbol-defs.svg#svg-csv-icon")
               span CSV
 
@@ -75,4 +73,5 @@
           td {{tr.effectiveSalesPrice.value}} {{tr.effectiveSalesPrice.currency}}
           td {{tr.effectiveSalesMargin.value}} {{tr.effectiveSalesMargin.measuring}}
           td {{tr.discountType}}
+          td {{tr.discountLevel}}
           td {{tr.discountTable}}
