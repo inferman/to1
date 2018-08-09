@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import {FiltersService} from '../../services/filters.service';
+import {log} from 'util';
 
 @Component({
   selector: 'main-filters',

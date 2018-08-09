@@ -6,7 +6,6 @@
   font-family: 'Open Sans', sans-serif;
   line-height: 1;
   padding: 14px;
-  min-width: 100px;
   text-align: center;
   &:focus { outline: none; }
 
@@ -26,6 +25,7 @@
     border-radius: 3px;
     color: $primary-text-color;
     padding: 10px;
+    min-width: 100px;
     transition: color .3s ease;
     &:hover { color: $primary-color; }
     .btn-icon {
@@ -36,7 +36,7 @@
   &--rounded {
     height: 34px;
     border-radius: 34px;
-    padding: 8px;
+    padding: 8px 16px;
     transition: background .3s ease;
     .btn-icon {
       font-size: 14px;
