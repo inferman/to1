@@ -39,11 +39,8 @@
                 .btn_text-holder Whats new
             li.columns
               .filter-wrapper
-                custom-select([config]='true')
                 label select currency
-                input(type="text",
-                  name="currency"
-                  )
+                custom-select([config]="prop")
             li.columns
               .filter-wrapper
                 label language

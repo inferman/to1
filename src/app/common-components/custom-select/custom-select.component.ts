@@ -6,8 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./custom-select.component.scss']
 })
 export class CustomSelectComponent implements OnInit {
-  @Input() config: {};
-  isActive = true;
+  @Input() config: {isBordered: boolean, initText: string};
+  isActive = false;
   isMultipleSelect = false;
   constructor() { }
 

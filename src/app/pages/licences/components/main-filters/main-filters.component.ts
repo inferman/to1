@@ -16,6 +16,7 @@ export class MainFiltersComponent implements OnInit {
   mainActiveTab = '';
   secondActiveTab = '';
   isDynamicFiltersActive = false;
+  prop = {isBordered: true, initText: 'Select'};
 
   constructor(private filtersService: FiltersService) { }
 

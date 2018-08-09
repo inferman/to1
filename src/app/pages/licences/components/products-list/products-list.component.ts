@@ -11,6 +11,7 @@ export class ProductsListComponent implements OnInit {
 
   productsList = [];
   headerItemsList = [];
+  prop = {isBordered: false, initText: 'Select Customer'};
 
   constructor(private productsService: ProductsTableService) {}
 

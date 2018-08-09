@@ -1,7 +1,7 @@
 
-<div class="select-wrapper" [ngClass]="{'select--bordered': config}">
+<div class="select-wrapper" [ngClass]="{'select--bordered': config.isBordered}">
   <div class="select_header" (click)="toggleListItems()">
-    <div class="select_choosen-item">Select Customer</div><i class="fa" aria-hidden="true" [ngClass]="isActive ? 'fa-angle-up' : 'fa-angle-down'"></i>
+    <div class="select_choosen-item">{{config.initText}}</div><i class="fa" aria-hidden="true" [ngClass]="isActive ? 'fa-angle-up' : 'fa-angle-down'"></i>
   </div>
   <div class="select_body" *ngIf="isActive">
     <div class="select_search-box">

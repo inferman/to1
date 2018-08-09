@@ -1,6 +1,6 @@
-.select-wrapper([ngClass]="{'select--bordered': config}")
+.select-wrapper([ngClass]="{'select--bordered': config.isBordered}")
   .select_header((click)="toggleListItems()")
-    .select_choosen-item Select Customer
+    .select_choosen-item {{config.initText}}
     i.fa(aria-hidden="true",
         [ngClass]="isActive ? 'fa-angle-up' : 'fa-angle-down'")
   .select_body(*ngIf="isActive")
