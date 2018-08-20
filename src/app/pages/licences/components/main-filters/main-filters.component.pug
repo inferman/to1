@@ -40,20 +40,29 @@
                   span Whats new
             li.columns
               .filter-wrapper
+                label select month
+                input(type="text",
+                name="month"
+                )
+            li.columns
+              .filter-wrapper
                 label select currency
-                custom-select([config]="prop")
+                .select
+                  simple-select(
+                    [selectList]="currenciesList",
+                    [selectedItem]="currenciesList[0]",
+                    (itemSelected)="onCurrencySelected($event)"
+                  )
             li.columns
               .filter-wrapper
                 label language
-                input(type="text",
-                  name="language"
+                .select
+                  simple-select(
+                    [selectList]="languagesList",
+                    [selectedItem]="languagesList[0]",
+                    (itemSelected)="onLanguageSelected($event)"
                   )
-            li.columns
-              .filter-wrapper
-                label select month
-                input(type="text",
-                  name="month"
-                  )
+
             li.columns.small-3
               .filter-wrapper
                 label select pricelist

@@ -44,20 +44,24 @@
             </li>
             <li class="columns">
               <div class="filter-wrapper">
+                <label>select month</label>
+                <input type="text" name="month"/>
+              </div>
+            </li>
+            <li class="columns">
+              <div class="filter-wrapper">
                 <label>select currency</label>
-                <custom-select [config]="prop"></custom-select>
+                <div class="select">
+                  <simple-select [selectList]="currenciesList" [selectedItem]="currenciesList[0]" (itemSelected)="onCurrencySelected($event)"></simple-select>
+                </div>
               </div>
             </li>
             <li class="columns">
               <div class="filter-wrapper">
                 <label>language</label>
-                <input type="text" name="language"/>
-              </div>
-            </li>
-            <li class="columns">
-              <div class="filter-wrapper">
-                <label>select month</label>
-                <input type="text" name="month"/>
+                <div class="select">
+                  <simple-select [selectList]="languagesList" [selectedItem]="languagesList[0]" (itemSelected)="onLanguageSelected($event)"></simple-select>
+                </div>
               </div>
             </li>
             <li class="columns small-3">

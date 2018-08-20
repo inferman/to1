@@ -18,6 +18,17 @@ export class MainFiltersComponent implements OnInit {
   secondActiveTab = '';
   isDynamicFiltersActive = false;
   prop = {isBordered: true, initText: 'Select'};
+  languagesList = [
+    { id: 1, text: 'English' },
+    { id: 2, text: 'Ukrainian' },
+    { id: 3, text: 'Deutsch' }
+  ];
+  currenciesList = [
+    { id: 1, text: '$ USD United States' },
+    { id: 2, text: '€ EUR' },
+    { id: 3, text: '£ GBP Pound Sterling' },
+
+  ];
 
   constructor(private filtersService: FiltersService) { }
 
@@ -42,6 +53,14 @@ export class MainFiltersComponent implements OnInit {
   toggleDynamicFilters() {
     this.isDynamicFiltersActive = !this.isDynamicFiltersActive;
     console.log(this.isDynamicFiltersActive);
+  }
+
+  onLanguageSelected(event) {
+    console.log(event);
+  }
+
+  onCurrencySelected(event) {
+    console.log(event);
   }
 
 }

@@ -1,0 +1,12 @@
+.select-wrapper.select--bordered
+  .select_header((click)="toggleListItems()")
+    .select_choosen-item.ellipsis {{selectedItem.text}}
+    i.fa(aria-hidden="true",
+    [ngClass]="isActive ? 'fa-angle-up' : 'fa-angle-down'")
+  .select_body(*ngIf="isActive")
+    ul.select_items-list
+      li(*ngFor="let item of selectList; let i = index",
+        (click)="onItemSelect(item)"
+      )
+        .select_item
+          .item-title {{ item.text }}
