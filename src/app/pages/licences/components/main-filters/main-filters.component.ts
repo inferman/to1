@@ -30,6 +30,43 @@ export class MainFiltersComponent implements OnInit {
 
   ];
 
+  config = {
+    firstDayOfWeek: 'mo',
+    monthFormat: 'MMM, YYYY',
+    disableKeypress: false,
+    allowMultiSelect: false,
+    closeOnSelect: false,
+    closeOnSelectDelay: 100,
+    onOpenDelay: 0,
+    weekDayFormat: 'ddd',
+    appendTo: document.body,
+    drops: 'down',
+    opens: 'down',
+    showNearMonthDays: false,
+    showWeekNumbers: false,
+    enableMonthSelector: true,
+    format: "MMM/YYYY",
+    yearFormat: 'YYYY',
+    showGoToCurrent: false,
+    dayBtnFormat: 'DD',
+    monthBtnFormat: 'MMM',
+    hours12Format: 'hh',
+    hours24Format: 'HH',
+    meridiemFormat: 'A',
+    minutesFormat: 'mm',
+    minutesInterval: 1,
+    secondsFormat: 'ss',
+    secondsInterval: 1,
+    showSeconds: false,
+    showTwentyFourHours: true,
+    timeSeparator: ':',
+    multipleYearsNavigateBy: 10,
+    showMultipleYearsNavigation: false,
+  };
+  today = new Date();
+  currentMonth = this.today.toLocaleString('en-us', { month: 'short' });
+  selectedMonth = this.currentMonth + '/' + this.today.getFullYear();
+
   constructor(private filtersService: FiltersService) { }
 
   ngOnInit() {
@@ -37,6 +74,7 @@ export class MainFiltersComponent implements OnInit {
     this.categoriesList = this.filtersService.getData('categoriesList');
     this.dinamicFiltersList = this.filtersService.getData('dinamicFiltersList');
   }
+
 
   setActiveMainTab(elem) {
     if (elem.title !== this.mainActiveTab) {
@@ -61,6 +99,11 @@ export class MainFiltersComponent implements OnInit {
 
   onCurrencySelected(event) {
     console.log(event);
+  }
+
+  onDateChange(event) {
+    this.selectedMonth = event;
+    console.log(this.selectedMonth);
   }
 
 }

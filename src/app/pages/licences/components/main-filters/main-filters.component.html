@@ -45,7 +45,9 @@
             <li class="columns">
               <div class="filter-wrapper">
                 <label>select month</label>
-                <input type="text" name="month"/>
+                <div class="dp-wrapper"><i class="fa fa-calendar" aria-hidden="true"></i>
+                  <input type="text" name="selectedDate" [(ngModel)]="selectedMonth" mode="month" [dpDayPicker]="config" theme="to1-datepicker" (ngModelChange)="onDateChange($event)"/>
+                </div>
               </div>
             </li>
             <li class="columns">

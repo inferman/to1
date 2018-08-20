@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+
+import { DpDatePickerModule } from 'ng2-date-picker';
 
 // containers
 import {LicencesComponent} from './licences.component';
@@ -24,6 +27,8 @@ export const ROUTES: Routes = [
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    DpDatePickerModule,
     RouterModule.forChild(ROUTES)
   ]
 })

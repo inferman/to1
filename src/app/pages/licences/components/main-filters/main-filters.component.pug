@@ -41,9 +41,17 @@
             li.columns
               .filter-wrapper
                 label select month
-                input(type="text",
-                name="month"
-                )
+                .dp-wrapper
+                  i(aria-hidden="true").fa.fa-calendar
+                  input(type="text",
+                    name="selectedDate",
+                    [(ngModel)]="selectedMonth",
+                    mode="month",
+                    [dpDayPicker]="config",
+                    theme="to1-datepicker",
+                    (ngModelChange)="onDateChange($event)"
+                    )
+                //-dp-month-calendar( [(ngModel)]="selectedDate", [config]="config")
             li.columns
               .filter-wrapper
                 label select currency

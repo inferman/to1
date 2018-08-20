@@ -121,3 +121,20 @@ select {
     dd { margin: 0; }
   }
 }
+
+.dp-wrapper {
+  height: 34px;
+  position: relative;
+  input {
+    color: $primary-text-color;
+    border-color: $input-border-color;
+    padding-left: 25px;
+  }
+  .fa-calendar {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+}
