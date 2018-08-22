@@ -90,20 +90,19 @@ export class MainFiltersComponent implements OnInit {
 
   toggleDynamicFilters() {
     this.isDynamicFiltersActive = !this.isDynamicFiltersActive;
-    console.log(this.isDynamicFiltersActive);
   }
 
   onLanguageSelected(event) {
-    console.log(event);
+    // console.log(event);
   }
 
   onCurrencySelected(event) {
-    console.log(event);
+    // console.log(event);
   }
 
   onDateChange(event) {
     this.selectedMonth = event;
-    console.log(this.selectedMonth);
+    // console.log(this.selectedMonth);
   }
 
 }

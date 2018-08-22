@@ -30,7 +30,7 @@
 
     .filters_content-box
       section.filters_static-filters.row.align-bottom.align-justify
-        .columns.small-8
+        .columns.xlarge-8.small-12
           ul.row.align-bottom
             li.columns.shrink
               button(type="button").btn.btn_alert.btn--rounded
@@ -71,7 +71,7 @@
                     (itemSelected)="onLanguageSelected($event)"
                   )
 
-            li.columns.small-3
+            li.columns.xlarge-3.small-shrink
               .filter-wrapper
                 label select pricelist
               .switcher-wrapper
@@ -81,9 +81,9 @@
                     .can-toggle__switch(
                       data-checked="Partner",
                       data-unchecked="Global")
-        .columns.shrink
-          ul.static-btns-list.row.collapse.align-bottom
-            li.column
+        .columns.xlarge-4.small-12
+          .static-btns-list.row.collapse.align-bottom.align-right
+            .column.shrink
               .static-btns-holder
                 .btn-holder
                   button(type="button").btn.btn--color-filled.btn--black

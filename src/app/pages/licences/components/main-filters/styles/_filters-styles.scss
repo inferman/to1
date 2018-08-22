@@ -45,6 +45,30 @@ select {
 .filters_static-filters {
   padding: 0 10px 20px;
   margin-bottom: 30px;
+  > div:not(:last-child) {
+    margin-bottom: 30px;
+    padding-bottom: 40px;
+    position: relative;
+    &:after {
+      content: '';
+      height: 1px;
+      background: #f2f2f2;
+      left: -10px;
+      right: -10px;
+      position: absolute;
+      bottom: 0;
+    }
+    @include breakpoint(xlarge) {
+      margin: 0;
+      padding: 0;
+      &:after { display: none; }
+    }
+  }
+  .small-shrink {
+    @include breakpoint(large down) {
+      flex: 0 0 200px;
+    }
+  }
 }
 .dinamic-filters_list {
   padding: 25px 10px 0;
@@ -92,22 +116,34 @@ select {
 .static-btns-holder {
   display: flex;
   align-items: center;
-  .btn-holder { position: relative; }
+  position: relative;
   .btn-holder + .btn-holder { margin-left: 10px; }
   .btn {
     color: $white;
     &--black { background: $third-color; }
     &--blue { background: $primary-color; }
   }
+  @include breakpoint(xlarge) {
+    position: static;
+    .btn-holder { position: relative; }
+  }
 }
 
 .additional-info-holder {
+  white-space: nowrap;
   .additional-box {
     position: absolute;
-    left: 0;
-    width: 100%;
-    &--top { top: -20px; }
-    &--bottom { bottom: -20px; }
+    right: 100%;
+    margin-right: 20px;
+    &--top { top: 0; }
+    &--bottom { bottom: 0; }
+    @include breakpoint(xlarge) {
+      left: 0;
+      right: auto;
+      width: 100%;
+      &--top { top: -20px; }
+      &--bottom { bottom: -20px; }
+    }
   }
   dl {
     color: $primary-text-color;

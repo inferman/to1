@@ -7,6 +7,8 @@
 .filters_categories-list {
   flex: 0 0 auto;
   display: flex;
+  max-width: calc(100% - 115px);
+  overflow: hidden;
 }
 
 .filters_category-item {
