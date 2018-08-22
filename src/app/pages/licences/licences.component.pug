@@ -1,4 +1,15 @@
 section.filters-wrapper
   main-filters
+section.filters-wrapper
+  tabs-component(
+    [tabsHeadData]="tabsHeaderData",
+    [ngSwitch]="activeTemplate"
+  )
+    div(*ngSwitchCase="'template1'")
+      include ./blocks/values-template
+
+    div(*ngSwitchCase="'template2'")
+      h1 {{activeTemplate}} in use
+      p tabs content
 section.products-wrapper
   products-list

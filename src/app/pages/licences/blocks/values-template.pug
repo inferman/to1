@@ -1,0 +1,37 @@
+- var headersList = ["List price", "ERP", "ERP margin", "sales margin", "Fixed $", "effective<br>sales price", "effective<br>sales margin", "MARGIN<br>type", "discount table"]
+
+.settings_values-wrapper
+  .settings_values-table
+    ul.settings_values_thead.settings_values-container
+      each th in headersList
+        li.settings_values_th.settings_values-item !{th}
+
+    ul.settings_values_tbody.settings_values-container
+      -for(var i = 1; i<=10; i++)
+        li.settings_values_td.settings_values-item #{i}
+
+
+  .settings_values-body
+    .row
+      .columns.xlarge-7
+        .row.align-justify
+          .controls-holder.colmns.shrink
+            .switcher-wrapper
+              .can-toggle.filters-toggle
+                input(id="e" type="checkbox")
+                label(for="e")
+                  .can-toggle__switch(
+                  data-checked="Physical",
+                  data-unchecked="Digital")
+            select
+              option text 1
+              option text 2
+          .colmns.shrink
+            select
+              option text 1
+              option text 2
+      .columns.xlarge-5
+        button.btn.btn--color-filled.btn--black(type="button") text
+
+
+

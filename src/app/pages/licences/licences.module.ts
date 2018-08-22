@@ -11,6 +11,9 @@ import {MainFiltersComponent} from './components/main-filters/main-filters.compo
 import {ProductsListComponent} from './components/products-list/products-list.component';
 import {CustomSelectComponent} from '../../common-components/custom-select/custom-select.component';
 import {SimpleSelectorComponent} from '../../common-components/simple-select/simple-select.component';
+import {TabsComponent} from '../../common-components/tabs-component/tabs.component';
+import {TabsHeaderComponent} from '../../common-components/tabs-component/tabs-header/tabs-header.component';
+import {TabItemComponent} from '../../common-components/tabs-component/tab-item/tab-item.component';
 
 // routes
 export const ROUTES: Routes = [
@@ -23,7 +26,10 @@ export const ROUTES: Routes = [
     MainFiltersComponent,
     ProductsListComponent,
     CustomSelectComponent,
-    SimpleSelectorComponent
+    SimpleSelectorComponent,
+    TabsComponent,
+    TabsHeaderComponent,
+    TabItemComponent
   ],
   imports: [
     CommonModule,

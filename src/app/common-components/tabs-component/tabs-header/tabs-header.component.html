@@ -1,0 +1,6 @@
+
+<ul class="tabs_navigation-list">
+  <li class="tabs_navigation-item" *ngFor="let item of tabsList; let i = index" [class.active]="(i === 0)">
+    <tab-item [tabItem]="item"></tab-item>
+  </li>
+</ul>

@@ -2,6 +2,74 @@
 <section class="filters-wrapper">
   <main-filters></main-filters>
 </section>
+<section class="filters-wrapper">
+  <tabs-component [tabsHeadData]="tabsHeaderData" [ngSwitch]="activeTemplate">
+    <div *ngSwitchCase="'template1'">
+      <div class="settings_values-wrapper">
+        <div class="settings_values-table">
+          <ul class="settings_values_thead settings_values-container">
+            <li class="settings_values_th settings_values-item">List price</li>
+            <li class="settings_values_th settings_values-item">ERP</li>
+            <li class="settings_values_th settings_values-item">ERP margin</li>
+            <li class="settings_values_th settings_values-item">sales margin</li>
+            <li class="settings_values_th settings_values-item">Fixed $</li>
+            <li class="settings_values_th settings_values-item">effective<br>sales price</li>
+            <li class="settings_values_th settings_values-item">effective<br>sales margin</li>
+            <li class="settings_values_th settings_values-item">MARGIN<br>type</li>
+            <li class="settings_values_th settings_values-item">discount table</li>
+          </ul>
+          <ul class="settings_values_tbody settings_values-container">
+            <li class="settings_values_td settings_values-item">1</li>
+            <li class="settings_values_td settings_values-item">2</li>
+            <li class="settings_values_td settings_values-item">3</li>
+            <li class="settings_values_td settings_values-item">4</li>
+            <li class="settings_values_td settings_values-item">5</li>
+            <li class="settings_values_td settings_values-item">6</li>
+            <li class="settings_values_td settings_values-item">7</li>
+            <li class="settings_values_td settings_values-item">8</li>
+            <li class="settings_values_td settings_values-item">9</li>
+            <li class="settings_values_td settings_values-item">10</li>
+          </ul>
+        </div>
+        <div class="settings_values-body">
+          <div class="row">
+            <div class="columns xlarge-7">
+              <div class="row align-justify">
+                <div class="controls-holder colmns shrink">
+                  <div class="switcher-wrapper">
+                    <div class="can-toggle filters-toggle">
+                      <input id="e" type="checkbox"/>
+                      <label for="e">
+                        <div class="can-toggle__switch" data-checked="Physical" data-unchecked="Digital"></div>
+                      </label>
+                    </div>
+                  </div>
+                  <select>
+                    <option>text 1</option>
+                    <option>text 2</option>
+                  </select>
+                </div>
+                <div class="colmns shrink">
+                  <select>
+                    <option>text 1</option>
+                    <option>text 2</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="columns xlarge-5">
+              <button class="btn btn--color-filled btn--black" type="button">text</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngSwitchCase="'template2'">
+      <h1>{{activeTemplate}} in use</h1>
+      <p>tabs content</p>
+    </div>
+  </tabs-component>
+</section>
 <section class="products-wrapper">
   <products-list></products-list>
 </section>

@@ -1,0 +1,43 @@
+.settings_values-container {
+  display: flex;
+  margin: 0 -10px;
+}
+.settings_values-item {
+  flex: 0 0 11.111%;
+  max-width: 11.111%;
+}
+
+.settings_values-table {
+  border-bottom: 1px solid #f2f2f2;
+  margin-bottom: 32px;
+}
+.settings_values_thead {
+  align-items: center;
+  background: $primary-color;
+  color: $white;
+  padding: 16px 0;
+}
+.settings_values_th,
+.settings_values_td {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0 10px;
+}
+
+.settings_values_tbody {
+  padding: 52px 0;
+}
+
+.settings_values-body {
+  .controls-holder {
+    display: flex;
+  }
+  .switcher-wrapper {
+    flex: 0 0 172px;
+    width: 172px;
+    margin-right: 10px;
+  }
+}
