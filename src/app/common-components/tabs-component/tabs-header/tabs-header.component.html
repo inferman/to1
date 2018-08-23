@@ -1,6 +1,6 @@
 
 <ul class="tabs_navigation-list">
-  <li class="tabs_navigation-item" *ngFor="let item of tabsList; let i = index" [class.active]="(i === 0)">
+  <li class="tabs_navigation-item" *ngFor="let item of tabsList" [class.active]="item.type === activeTab" (click)="onClickTab(item)">
     <tab-item [tabItem]="item"></tab-item>
   </li>
 </ul>

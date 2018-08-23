@@ -1,7 +1,7 @@
 
 <div class="tabs-block_wrapper">
   <div class="tabs_header">
-    <tabs-header [tabsList]="tabsHeadData"></tabs-header>
+    <tabs-header [tabsList]="tabsHeadData" (tabSelected)="onSelectTab($event)"></tabs-header>
   </div>
   <div class="tabs_body">
     <ng-content></ng-content>

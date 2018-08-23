@@ -1,5 +1,8 @@
 .tabs-block_wrapper
   .tabs_header
-    tabs-header([tabsList]="tabsHeadData")
+    tabs-header(
+      [tabsList]="tabsHeadData",
+      (tabSelected)="onSelectTab($event)"
+    )
   .tabs_body
     ng-content

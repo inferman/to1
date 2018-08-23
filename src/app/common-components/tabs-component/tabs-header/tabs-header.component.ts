@@ -1,4 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {TabProps} from '../../../interfaces/tab-props';
 
 @Component({
   selector: 'tabs-header',
@@ -8,7 +9,20 @@ import {Component, Input, OnInit} from '@angular/core';
 
 export class  TabsHeaderComponent implements OnInit {
   @Input() tabsList: any[];
+  @Output() tabSelected = new EventEmitter<TabProps>();
+
+  activeTab: string;
+
   constructor() {}
 
-  ngOnInit() { }
+  onClickTab(tab: TabProps) {
+    if (tab.type === this.activeTab) return false;
+
+    this.tabSelected.emit({ title: tab.title, type: tab.type });
+    this.activeTab = tab.type;
+  }
+
+  ngOnInit() {
+    this.activeTab = this.tabsList[0].type;
+  }
 }

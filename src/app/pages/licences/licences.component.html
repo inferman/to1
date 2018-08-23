@@ -3,8 +3,8 @@
   <main-filters></main-filters>
 </section>
 <section class="filters-wrapper">
-  <tabs-component [tabsHeadData]="tabsHeaderData" [ngSwitch]="activeTemplate">
-    <div *ngSwitchCase="'template1'">
+  <tabs-component [tabsHeadData]="tabsHeaderData" [ngSwitch]="currentTab" (tabSwitched)="onGetTab($event)">
+    <div *ngSwitchCase="tabTypes.productUpdate">
       <div class="settings_values-wrapper">
         <div class="settings_values-table">
           <ul class="settings_values_thead settings_values-container">
@@ -72,8 +72,16 @@
         </div>
       </div>
     </div>
-    <div *ngSwitchCase="'template2'">
-      <h1>{{activeTemplate}} in use</h1>
+    <div *ngSwitchCase="tabTypes.discounts">
+      <h1>{{currentTab}} tab in use</h1>
+      <p>tabs content</p>
+    </div>
+    <div *ngSwitchCase="tabTypes.customers">
+      <h1>{{currentTab}} tab in use</h1>
+      <p>tabs content</p>
+    </div>
+    <div *ngSwitchCase="tabTypes.defaultSetForm">
+      <h1>{{currentTab}} tab in use</h1>
       <p>tabs content</p>
     </div>
   </tabs-component>

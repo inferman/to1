@@ -1,7 +1,8 @@
 ul.tabs_navigation-list
   li.tabs_navigation-item(
-    *ngFor="let item of tabsList; let i = index",
-    [class.active]="(i === 0)"
+    *ngFor="let item of tabsList",
+    [class.active]="item.type === activeTab",
+    (click)="onClickTab(item)"
   )
     tab-item(
       [tabItem]="item"

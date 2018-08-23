@@ -3,13 +3,22 @@ section.filters-wrapper
 section.filters-wrapper
   tabs-component(
     [tabsHeadData]="tabsHeaderData",
-    [ngSwitch]="activeTemplate"
+    [ngSwitch]="currentTab",
+    (tabSwitched)="onGetTab($event)"
   )
-    div(*ngSwitchCase="'template1'")
+    div(*ngSwitchCase="tabTypes.productUpdate")
       include ./blocks/values-template
 
-    div(*ngSwitchCase="'template2'")
-      h1 {{activeTemplate}} in use
+    div(*ngSwitchCase="tabTypes.discounts")
+      h1 {{currentTab}} tab in use
+      p tabs content
+
+    div(*ngSwitchCase="tabTypes.customers")
+      h1 {{currentTab}} tab in use
+      p tabs content
+
+    div(*ngSwitchCase="tabTypes.defaultSetForm")
+      h1 {{currentTab}} tab in use
       p tabs content
 section.products-wrapper
   products-list
