@@ -1,6 +1,8 @@
+.settings_values-wrapper { padding-bottom: 36px; }
+
 .settings_values-container {
   display: flex;
-  margin: 0 -10px;
+  //margin: 0 -10px;
 }
 .settings_values-item {
   flex: 0 0 11.111%;
@@ -8,8 +10,10 @@
 }
 
 .settings_values-table {
+  border-radius: 0 5px 0 0;
   border-bottom: 1px solid #f2f2f2;
   margin-bottom: 32px;
+  overflow: hidden;
 }
 .settings_values_thead {
   align-items: center;
@@ -40,4 +44,19 @@
     width: 172px;
     margin-right: 10px;
   }
+  .btns-row {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.values_taxes-block {
+  @include breakpoint(xlarge) { justify-content: space-between; }
+  .controls-holder { margin-right: 10px; }
+}
+
+.history-btn {
+  color: $success-color;
+  border-color: $success-color;
+  .btn-icon { font-size: 12px; }
 }

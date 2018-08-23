@@ -43,6 +43,14 @@
       margin-right: 5px;
     }
   }
+  &--primary {
+    background: $primary-color;
+    color: $white;
+  }
+  &--secondary {
+    background: $third-color;
+    color: $white;
+  }
   .inner-holder {
     display: flex;
     align-items: center;

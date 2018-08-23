@@ -12,10 +12,10 @@
 
 
   .settings_values-body
-    .row
-      .columns.xlarge-7
-        .row.align-justify
-          .controls-holder.colmns.shrink
+    .row.align-middle
+      .columns.xlarge-7.small-6
+        .values_taxes-block.row.collapse
+          .controls-holder.columns.shrink
             .switcher-wrapper
               .can-toggle.filters-toggle
                 input(id="e" type="checkbox")
@@ -23,15 +23,33 @@
                   .can-toggle__switch(
                   data-checked="Physical",
                   data-unchecked="Digital")
-            select
-              option text 1
-              option text 2
-          .colmns.shrink
-            select
-              option text 1
-              option text 2
-      .columns.xlarge-5
-        button.btn.btn--color-filled.btn--black(type="button") text
+            .select-holder
+              simple-select(
+                [selectList]="taxesList",
+                [selectedItem]="taxesList[0]"
+                )
+          .columns.shrink
+            .select-holder
+              simple-select(
+                [selectList]="taxesList",
+                [selectedItem]="taxesList[0]"
+              )
+      .columns.xlarge-5.small-6
+        .btns-row
+          button.history-btn.btn.btn--bordered(type="button")
+            .inner-older
+              i.btn-icon.fa.fa-history(aria-hidden="true")
+              span History
+          button.btn.btn--color-filled.btn--secondary(type="button")
+            .inner-older
+              i.btn-icon.fa.fa-refresh(aria-hidden="true")
+              span Reset ERP
+
+          button.btn.btn--color-filled.btn--primary(type="button")
+            .inner-older
+              i.btn-icon.fa.fa-check(aria-hidden="true")
+              span Apply changes
+
 
 
 

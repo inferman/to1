@@ -14,7 +14,8 @@ export class SimpleSelectorComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   toggleListItems() {
     this.isActive = !this.isActive;
