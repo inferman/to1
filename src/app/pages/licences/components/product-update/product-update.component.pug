@@ -1,0 +1,87 @@
+.settings_values-wrapper
+  .settings_body
+    ul.settings_values_thead.settings_values-container
+      li(*ngFor="let th of tableData.headings").settings_values_th.settings_values-item {{ th }}
+
+    ul.settings_values_tbody.settings_values-container
+      li.settings_values_td.settings_values-item
+        .input-field.input-field--data
+          span {{ tableData.bodyData.listPrice.value }}
+          span {{ tableData.bodyData.listPrice.currency }}
+      li.settings_values_td.settings_values-item
+        .input-field.input-field--data
+          span {{ tableData.bodyData.erp.value }}
+          span {{ tableData.bodyData.erp.currency }}
+      li.settings_values_td.settings_values-item
+        .input-field.input-field--data
+          span {{ tableData.bodyData.erpMargin.value }}
+          span %
+      li.settings_values_td.settings_values-item
+        .input-field
+          input(type="text", value="{{ tableData.bodyData.salesMargin.value }}" disabled)
+      li.settings_values_td.settings_values-item
+        .input-field
+          input(type="text", value="{{ tableData.bodyData.fixedPrice.value }}")
+      li.settings_values_td.settings_values-item
+        .input-field.input-field--data
+          span {{ tableData.bodyData.effectivePrice.value }}
+          span {{ tableData.bodyData.effectivePrice.currency }}
+      li.settings_values_td.settings_values-item
+        .input-field.input-field--data
+          span {{ tableData.bodyData.effectiveMargin.value }}
+          span %
+      li.settings_values_td.settings_values-item
+        .input-field
+          .switcher-wrapper
+            .can-toggle.margins-toggle
+              input(id="marginType" type="checkbox")
+              label(for="marginType")
+                .can-toggle__switch(
+                data-checked="D",
+                data-unchecked="F")
+      li.settings_values_td.settings_values-item
+        .input-field
+          simple-select(
+            [selectList]="tableData.bodyData.taxes",
+            [selectedItem]="tableData.bodyData.taxes[0]"
+            )
+
+  .settings_footer.settings_footer--values-footer
+    .settings_values_btns-panel
+      .controls-col.controls-col--switchers
+        .values_taxes-block.row.collapse
+          .controls-holder.columns.shrink
+            .switcher-wrapper
+              .can-toggle.filters-toggle
+                input(id="taxesSwitcher" type="checkbox")
+                label(for="taxesSwitcher")
+                  .can-toggle__switch(
+                  data-checked="Physical",
+                  data-unchecked="Digital")
+            .select-holder
+              simple-select(
+                [selectList]="tableData.bodyData.taxes",
+                [selectedItem]="tableData.bodyData.taxes[0]"
+              )
+          .columns.shrink
+            .select-holder
+              simple-select(
+                [selectList]="tableData.bodyData.taxes",
+                [selectedItem]="tableData.bodyData.taxes[0]"
+              )
+
+      .controls-col.controls-col--buttons
+        .btns-row
+          button.history-btn.btn.btn--bordered(type="button")
+            .inner-holder
+              i.btn-icon.fa.fa-history(aria-hidden="true")
+              span History
+          button.btn.btn--color-filled.btn--secondary(type="button")
+            .inner-holder
+              i.btn-icon.fa.fa-refresh(aria-hidden="true")
+              span Reset ERP
+
+          button.btn.btn--color-filled.btn--primary(type="button")
+            .inner-holder
+              i.btn-icon.fa.fa-check(aria-hidden="true")
+              span Apply changes

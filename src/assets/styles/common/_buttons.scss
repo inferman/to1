@@ -1,5 +1,8 @@
+$btn-text-color: $white;
+
 .btn {
   border-radius: 5px;
+  color: $btn-text-color;
   cursor: pointer;
   font-size: 12px;
   font-weight: 600;
@@ -43,14 +46,9 @@
       margin-right: 5px;
     }
   }
-  &--primary {
-    background: $primary-color;
-    color: $white;
-  }
-  &--secondary {
-    background: $third-color;
-    color: $white;
-  }
+  &--primary { background: $primary-color; }
+  &--secondary { background: $third-color; }
+  &--alert { background: $alert-color; }
   .inner-holder {
     display: flex;
     align-items: center;

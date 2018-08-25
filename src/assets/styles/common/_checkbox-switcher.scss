@@ -3,7 +3,8 @@
   $can-toggle-on-color: #5fc054,
   $can-toggle-inactive-text: rgba(white, 0.5),
   $can-toggle-transition: cubic-bezier(0,1,0.5,1),
-  $can-toggle-caret-color: #000000
+  $can-toggle-caret-color: #000000,
+  $can-toggle-borders-color: transparent
 
 ) {
 
@@ -38,7 +39,7 @@
       transition: background-color 0.3s $can-toggle-transition;
       //background: lighten($can-toggle-off-color, 5%);
       background: $can-toggle-off-color;
-      border: 1px solid $can-toggle-caret-color;
+      border: 1px solid $can-toggle-borders-color;
       //&:before { color: inherit; }
       &:after {
         // Autoprefixer choked here, so making the prefixes explicit
@@ -224,8 +225,8 @@
   &.filters-toggle {
     @include can-toggle-branding
     (
-        $can-toggle-off-color: $white,
-        $can-toggle-on-color: $white,
+        $can-toggle-off-color: $light-gray,
+        $can-toggle-on-color: $light-gray,
         $can-toggle-inactive-text: $primary-text-color,
         $can-toggle-transition: cubic-bezier(0.860, 0.000, 0.070, 1.000),
         $can-toggle-caret-color: $secondary-color
@@ -240,6 +241,28 @@
         $can-toggle-switch-font-size: 12px,       // Switch font size
         $can-toggle-shadow: none,                 // Switch shadow on hover/focus
         $can-toggle-inactive-text: $primary-text-color
+    );
+  }
+
+  &.margins-toggle {
+    @include can-toggle-branding
+    (
+      $can-toggle-off-color: $light-gray,
+      $can-toggle-on-color: $light-gray,
+      $can-toggle-inactive-text: $primary-text-color,
+      $can-toggle-transition: cubic-bezier(0.860, 0.000, 0.070, 1.000),
+      $can-toggle-caret-color: $success-color
+    );
+    @include can-toggle-appearance
+    (
+      $can-toggle-width: 100px,                 // Toggle width
+      $can-toggle-height: 34px,                 // Toggle height
+      $can-toggle-border-radius: 60px,          // Toggle border radius
+      $can-toggle-offset: 0px,                  // Offset (distance btw switch and box)
+      $can-toggle-label-font-size: 12px,        // Label font size
+      $can-toggle-switch-font-size: 12px,       // Switch font size
+      $can-toggle-shadow: none,                 // Switch shadow on hover/focus
+      $can-toggle-inactive-text: $primary-text-color
     );
   }
 

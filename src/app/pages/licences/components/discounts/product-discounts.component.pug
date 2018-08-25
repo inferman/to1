@@ -1,0 +1,82 @@
+.settings_discount-wrapper
+  .settings_body
+    .discount_filters-row
+      .row.align-justify.align-bottom
+        .columns.xlarge-3.small-2
+          .input-field
+            .field-label
+              dl
+                dt Total:
+                dd 502
+            .input-holder
+              input(type="text")
+        .columns.xlarge-8.small-9
+          .row.align-bottom
+            .columns.small-3
+              .input-field
+                .field-label dscount table name
+                input(type="text")
+            .columns.small-3
+              .input-field
+                .field-label List price
+                input(type="text")
+            .columns.small-3
+              .input-field
+                .field-label Margin %
+                input(type="text")
+            .columns.small-3
+              .input-field
+                .field-label Fixed $
+                input(type="text")
+
+    .discount_table-wrapper
+      .row.align-justify
+        .columns.xlarge-3.small-12
+          .discout-table_table-switchers
+            ul.discout-table_tables-list
+              li(
+              *ngFor="let table of discountTables; let i = index",
+              [class.active]="(i === 0)"
+              )
+                .item-box
+                  span {{ table }}
+            .discount-table_tables-pagination
+              .pagination-block
+                .btn-holder
+                  button(type="button").pagination-btn
+                    i(aria-hidden="true").fa.fa-angle-left
+                .pages.text-center
+                  | 1 of 22
+                .btn-holder
+                  button(type="button").pagination-btn
+                    i(aria-hidden="true").fa.fa-angle-right
+        .columns.xlarge-8.small-12
+          .table-wrapper
+            table
+              thead
+                tr
+                  th(*ngFor="let th of discountData.tableHeadings") {{ th }}
+              tbody
+                tr(*ngFor="let tr of discountData.tableBody; let i = index")
+                  td Level&nbsp;{{ i }}
+                  td
+                    .input-holder
+                      input(value="{{ tr.discount }}")
+                  td {{ tr.calcMargin | number: '2.2-2' }} %
+                  td
+                    .input-holder
+                      input(value="{{ tr.fixed | number: '1.2-2' }}")
+                  td ${{ tr.effectivePrice | number: '2.2-2' }}
+                  td {{ tr.effectiveMargin }} %
+
+  .settings_footer
+    .discount_buttons-row.row.align-right
+      .column.shrink
+        button(type="button").btn.btn--color-filled.btn--alert
+          .inner-holder
+            i(aria-hidden="true").btn-icon.fa.fa-trash
+            span Delete
+        button(type="button").btn.btn--color-filled.btn--primary
+          .inner-holder
+            i(aria-hidden="true").btn-icon.fa.fa-check
+            span Apply

@@ -5,76 +5,10 @@
 <section class="filters-wrapper">
   <tabs-component [tabsHeadData]="tabsHeaderData" [ngSwitch]="currentTab" (tabSwitched)="onGetTab($event)">
     <div *ngSwitchCase="tabTypes.productUpdate">
-      <div class="settings_values-wrapper">
-        <div class="settings_values-table">
-          <ul class="settings_values_thead settings_values-container">
-            <li class="settings_values_th settings_values-item">List price</li>
-            <li class="settings_values_th settings_values-item">ERP</li>
-            <li class="settings_values_th settings_values-item">ERP margin</li>
-            <li class="settings_values_th settings_values-item">sales margin</li>
-            <li class="settings_values_th settings_values-item">Fixed $</li>
-            <li class="settings_values_th settings_values-item">effective<br>sales price</li>
-            <li class="settings_values_th settings_values-item">effective<br>sales margin</li>
-            <li class="settings_values_th settings_values-item">MARGIN<br>type</li>
-            <li class="settings_values_th settings_values-item">discount table</li>
-          </ul>
-          <ul class="settings_values_tbody settings_values-container">
-            <li class="settings_values_td settings_values-item">1</li>
-            <li class="settings_values_td settings_values-item">2</li>
-            <li class="settings_values_td settings_values-item">3</li>
-            <li class="settings_values_td settings_values-item">4</li>
-            <li class="settings_values_td settings_values-item">5</li>
-            <li class="settings_values_td settings_values-item">6</li>
-            <li class="settings_values_td settings_values-item">7</li>
-            <li class="settings_values_td settings_values-item">8</li>
-            <li class="settings_values_td settings_values-item">9</li>
-            <li class="settings_values_td settings_values-item">10</li>
-          </ul>
-        </div>
-        <div class="settings_values-body">
-          <div class="row align-middle">
-            <div class="columns xlarge-7 small-6">
-              <div class="values_taxes-block row collapse">
-                <div class="controls-holder columns shrink">
-                  <div class="switcher-wrapper">
-                    <div class="can-toggle filters-toggle">
-                      <input id="e" type="checkbox"/>
-                      <label for="e">
-                        <div class="can-toggle__switch" data-checked="Physical" data-unchecked="Digital"></div>
-                      </label>
-                    </div>
-                  </div>
-                  <div class="select-holder">
-                    <simple-select [selectList]="taxesList" [selectedItem]="taxesList[0]"></simple-select>
-                  </div>
-                </div>
-                <div class="columns shrink">
-                  <div class="select-holder">
-                    <simple-select [selectList]="taxesList" [selectedItem]="taxesList[0]"></simple-select>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="columns xlarge-5 small-6">
-              <div class="btns-row">
-                <button class="history-btn btn btn--bordered" type="button">
-                  <div class="inner-older"><i class="btn-icon fa fa-history" aria-hidden="true"></i><span>History</span></div>
-                </button>
-                <button class="btn btn--color-filled btn--secondary" type="button">
-                  <div class="inner-older"><i class="btn-icon fa fa-refresh" aria-hidden="true"></i><span>Reset ERP</span></div>
-                </button>
-                <button class="btn btn--color-filled btn--primary" type="button">
-                  <div class="inner-older"><i class="btn-icon fa fa-check" aria-hidden="true"></i><span>Apply changes</span></div>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <product-update [tableData]="productUpdatesTable"></product-update>
     </div>
     <div *ngSwitchCase="tabTypes.discounts">
-      <h1>{{currentTab}} tab in use</h1>
-      <p>tabs content</p>
+      <product-discounts [discountTables]="discountTableList" [discountData]="discountTableData"></product-discounts>
     </div>
     <div *ngSwitchCase="tabTypes.customers">
       <h1>{{currentTab}} tab in use</h1>

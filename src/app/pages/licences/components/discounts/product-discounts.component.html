@@ -1,0 +1,115 @@
+
+<div class="settings_discount-wrapper">
+  <div class="settings_body">
+    <div class="discount_filters-row">
+      <div class="row align-justify align-bottom">
+        <div class="columns xlarge-3 small-2">
+          <div class="input-field">
+            <div class="field-label">
+              <dl>
+                <dt>Total:</dt>
+                <dd>502</dd>
+              </dl>
+            </div>
+            <div class="input-holder">
+              <input type="text"/>
+            </div>
+          </div>
+        </div>
+        <div class="columns xlarge-8 small-9">
+          <div class="row align-bottom">
+            <div class="columns small-3">
+              <div class="input-field">
+                <div class="field-label">dscount table name</div>
+                <input type="text"/>
+              </div>
+            </div>
+            <div class="columns small-3">
+              <div class="input-field">
+                <div class="field-label">List price</div>
+                <input type="text"/>
+              </div>
+            </div>
+            <div class="columns small-3">
+              <div class="input-field">
+                <div class="field-label">Margin %</div>
+                <input type="text"/>
+              </div>
+            </div>
+            <div class="columns small-3">
+              <div class="input-field">
+                <div class="field-label">Fixed $</div>
+                <input type="text"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="discount_table-wrapper">
+      <div class="row align-justify">
+        <div class="columns xlarge-3 small-12">
+          <div class="discout-table_table-switchers">
+            <ul class="discout-table_tables-list">
+              <li *ngFor="let table of discountTables; let i = index" [class.active]="(i === 0)">
+                <div class="item-box"><span>{{ table }}</span></div>
+              </li>
+            </ul>
+            <div class="discount-table_tables-pagination">
+              <div class="pagination-block">
+                <div class="btn-holder">
+                  <button class="pagination-btn" type="button"><i class="fa fa-angle-left" aria-hidden="true"></i></button>
+                </div>
+                <div class="pages text-center">1 of 22</div>
+                <div class="btn-holder">
+                  <button class="pagination-btn" type="button"><i class="fa fa-angle-right" aria-hidden="true"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="columns xlarge-8 small-12">
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th *ngFor="let th of discountData.tableHeadings">{{ th }}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let tr of discountData.tableBody; let i = index">
+                  <td>Level&nbsp;{{ i }}</td>
+                  <td>
+                    <div class="input-holder">
+                      <input value="{{ tr.discount }}"/>
+                    </div>
+                  </td>
+                  <td>{{ tr.calcMargin | number: '2.2-2' }} %</td>
+                  <td>
+                    <div class="input-holder">
+                      <input value="{{ tr.fixed | number: '1.2-2' }}"/>
+                    </div>
+                  </td>
+                  <td>${{ tr.effectivePrice | number: '2.2-2' }}</td>
+                  <td>{{ tr.effectiveMargin }} %</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="settings_footer">
+    <div class="discount_buttons-row row align-right">
+      <div class="column shrink">
+        <button class="btn btn--color-filled btn--alert" type="button">
+          <div class="inner-holder"><i class="btn-icon fa fa-trash" aria-hidden="true"></i><span>Delete</span></div>
+        </button>
+        <button class="btn btn--color-filled btn--primary" type="button">
+          <div class="inner-holder"><i class="btn-icon fa fa-check" aria-hidden="true"></i><span>Apply</span></div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

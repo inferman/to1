@@ -14,6 +14,8 @@ import {SimpleSelectorComponent} from '../../common-components/simple-select/sim
 import {TabsComponent} from '../../common-components/tabs-component/tabs.component';
 import {TabsHeaderComponent} from '../../common-components/tabs-component/tabs-header/tabs-header.component';
 import {TabItemComponent} from '../../common-components/tabs-component/tab-item/tab-item.component';
+import {ProductUpdateComponent} from './components/product-update/product-update.component';
+import {ProductDiscountsComponent} from './components/discounts/product-discounts.component';
 
 // routes
 export const ROUTES: Routes = [
@@ -29,7 +31,9 @@ export const ROUTES: Routes = [
     SimpleSelectorComponent,
     TabsComponent,
     TabsHeaderComponent,
-    TabItemComponent
+    TabItemComponent,
+    ProductUpdateComponent,
+    ProductDiscountsComponent
   ],
   imports: [
     CommonModule,

@@ -7,11 +7,13 @@ section.filters-wrapper
     (tabSwitched)="onGetTab($event)"
   )
     div(*ngSwitchCase="tabTypes.productUpdate")
-      include ./blocks/values-template
+      product-update([tableData]="productUpdatesTable")
 
     div(*ngSwitchCase="tabTypes.discounts")
-      h1 {{currentTab}} tab in use
-      p tabs content
+      product-discounts(
+        [discountTables]="discountTableList",
+        [discountData]="discountTableData"
+      )
 
     div(*ngSwitchCase="tabTypes.customers")
       h1 {{currentTab}} tab in use

@@ -1,0 +1,91 @@
+
+<div class="settings_values-wrapper">
+  <div class="settings_body">
+    <ul class="settings_values_thead settings_values-container">
+      <li class="settings_values_th settings_values-item" *ngFor="let th of tableData.headings">{{ th }}</li>
+    </ul>
+    <ul class="settings_values_tbody settings_values-container">
+      <li class="settings_values_td settings_values-item">
+        <div class="input-field input-field--data"><span>{{ tableData.bodyData.listPrice.value }}</span><span>{{ tableData.bodyData.listPrice.currency }}</span></div>
+      </li>
+      <li class="settings_values_td settings_values-item">
+        <div class="input-field input-field--data"><span>{{ tableData.bodyData.erp.value }}</span><span>{{ tableData.bodyData.erp.currency }}</span></div>
+      </li>
+      <li class="settings_values_td settings_values-item">
+        <div class="input-field input-field--data"><span>{{ tableData.bodyData.erpMargin.value }}</span><span>%</span></div>
+      </li>
+      <li class="settings_values_td settings_values-item">
+        <div class="input-field">
+          <input type="text" value="{{ tableData.bodyData.salesMargin.value }}" disabled="disabled"/>
+        </div>
+      </li>
+      <li class="settings_values_td settings_values-item">
+        <div class="input-field">
+          <input type="text" value="{{ tableData.bodyData.fixedPrice.value }}"/>
+        </div>
+      </li>
+      <li class="settings_values_td settings_values-item">
+        <div class="input-field input-field--data"><span>{{ tableData.bodyData.effectivePrice.value }}</span><span>{{ tableData.bodyData.effectivePrice.currency }}</span></div>
+      </li>
+      <li class="settings_values_td settings_values-item">
+        <div class="input-field input-field--data"><span>{{ tableData.bodyData.effectiveMargin.value }}</span><span>%</span></div>
+      </li>
+      <li class="settings_values_td settings_values-item">
+        <div class="input-field">
+          <div class="switcher-wrapper">
+            <div class="can-toggle margins-toggle">
+              <input id="marginType" type="checkbox"/>
+              <label for="marginType">
+                <div class="can-toggle__switch" data-checked="D" data-unchecked="F"></div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="settings_values_td settings_values-item">
+        <div class="input-field">
+          <simple-select [selectList]="tableData.bodyData.taxes" [selectedItem]="tableData.bodyData.taxes[0]"></simple-select>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="settings_footer settings_footer--values-footer">
+    <div class="settings_values_btns-panel">
+      <div class="controls-col controls-col--switchers">
+        <div class="values_taxes-block row collapse">
+          <div class="controls-holder columns shrink">
+            <div class="switcher-wrapper">
+              <div class="can-toggle filters-toggle">
+                <input id="taxesSwitcher" type="checkbox"/>
+                <label for="taxesSwitcher">
+                  <div class="can-toggle__switch" data-checked="Physical" data-unchecked="Digital"></div>
+                </label>
+              </div>
+            </div>
+            <div class="select-holder">
+              <simple-select [selectList]="tableData.bodyData.taxes" [selectedItem]="tableData.bodyData.taxes[0]"></simple-select>
+            </div>
+          </div>
+          <div class="columns shrink">
+            <div class="select-holder">
+              <simple-select [selectList]="tableData.bodyData.taxes" [selectedItem]="tableData.bodyData.taxes[0]"></simple-select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="controls-col controls-col--buttons">
+        <div class="btns-row">
+          <button class="history-btn btn btn--bordered" type="button">
+            <div class="inner-holder"><i class="btn-icon fa fa-history" aria-hidden="true"></i><span>History</span></div>
+          </button>
+          <button class="btn btn--color-filled btn--secondary" type="button">
+            <div class="inner-holder"><i class="btn-icon fa fa-refresh" aria-hidden="true"></i><span>Reset ERP</span></div>
+          </button>
+          <button class="btn btn--color-filled btn--primary" type="button">
+            <div class="inner-holder"><i class="btn-icon fa fa-check" aria-hidden="true"></i><span>Apply changes</span></div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
