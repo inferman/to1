@@ -9,7 +9,10 @@
                 dt Total:
                 dd 502
             .input-holder
-              input(type="text")
+              .search_box
+                .search_input
+                  i(aria-hidden="true").fa.fa-search
+                  input(type="search", placeholder="Search")
         .columns.xlarge-8.small-9
           .row.align-bottom
             .columns.small-3
@@ -51,7 +54,7 @@
                   button(type="button").pagination-btn
                     i(aria-hidden="true").fa.fa-angle-right
         .columns.xlarge-8.small-12
-          .table-wrapper
+          .table-wrapper.table-wrapper--primary-table
             table
               thead
                 tr

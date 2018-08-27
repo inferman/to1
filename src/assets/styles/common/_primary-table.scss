@@ -1,0 +1,30 @@
+.table-wrapper--primary-table {
+  table { margin: 0; }
+  thead {
+    background: $primary-color;
+    color: $white;
+    th {
+      font-size: rem-calc(12);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      padding: 6px 15px;
+      text-transform: uppercase;
+    }
+  }
+  tbody {
+    font-size: rem-calc(12);
+    tr {
+      &:nth-of-type(even) { background: #FBFBFB; }
+    }
+    td {
+      padding: 6px 15px;
+      &:not(:last-child) {
+        border-right: 1px solid #F2F2F2;
+      }
+    }
+    input {
+      padding: 6px 5px;
+      max-width: 100%;
+    }
+  }
+}

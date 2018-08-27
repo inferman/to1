@@ -125,18 +125,9 @@
     overflow: hidden;
   }
   thead {
-    background: $primary-color;
-    color: $white;
-    th {
-      font-size: rem-calc(12);
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-align: center;
-      text-transform: uppercase;
-    }
+    th { text-align: center; }
   }
   tbody {
-    font-size: rem-calc(12);
     text-align: center;
     tr {
       &:nth-of-type(even) { background: #FBFBFB; }
@@ -146,11 +137,7 @@
       &:not(:last-child) { border-right: 1px solid #F2F2F2; }
     }
     .input-holder { max-width: 90px; }
-    input {
-      padding: 6px 5px;
-      max-width: 100%;
-      text-align: center;
-    }
+    input { text-align: center; }
   }
 }
 

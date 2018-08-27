@@ -49,6 +49,10 @@ select {
     outline-offset: unset;
   }
 }
+select {
+  background-position: right 0 center;
+  line-height: 1;
+}
 input[type="checkbox"] {
   margin: 0;
   padding: 0;

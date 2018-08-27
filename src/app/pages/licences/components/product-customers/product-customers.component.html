@@ -1,0 +1,79 @@
+
+<div class="settings_customers-wrapper">
+  <div class="settings_body">
+    <div class="table-wrapper table-wrapper--primary-table">
+      <table>
+        <thead>
+          <tr>
+            <th width="40">
+              <div class="checkbox-holder">
+                <label>
+                  <input class="hidden-checkbox" type="checkbox"/><span class="fake-checkbox"></span>
+                </label>
+              </div>
+            </th>
+            <th>Company</th>
+            <th>city</th>
+            <th>state / province</th>
+            <th>country</th>
+            <th class="text-center" width="100">currency</th>
+            <th class="text-center" width="110">discount level monthly</th>
+            <th class="text-center" width="110">discount level annually</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let customer of customersData">
+            <td width="40">
+              <div class="checkbox-holder">
+                <label>
+                  <input class="hidden-checkbox" type="checkbox"/><span class="fake-checkbox"></span>
+                </label>
+              </div>
+            </td>
+            <td>{{ customer.company }}</td>
+            <td>{{ customer.city }}</td>
+            <td>{{ customer.state }}</td>
+            <td>{{ customer.country }}</td>
+            <td class="text-center">{{ customer.currency }}</td>
+            <td>
+              <select [(ngModel)]="customer.discountLevelMonthly">
+                <option *ngFor="let m of [0,1,2,3,4,5,6,7,8,9]" [ngValue]="m">{{ m }}</option>
+              </select>
+            </td>
+            <td>
+              <select [(ngModel)]="customer.discountLevelAnnually">
+                <option *ngFor="let a of [0,1,2,3,4,5,6,7,8,9]" [ngValue]="a">{{ a }}</option>
+              </select>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="settings_footer">
+    <div class="row align-middle align-justify">
+      <div class="columns shrink">
+        <div class="flex-container">
+          <div class="search">
+            <div class="search_box">
+              <div class="search_input"><i class="fa fa-search" aria-hidden="true"></i>
+                <input type="search" placeholder="Search"/>
+              </div>
+            </div>
+          </div>
+          <div class="statistics">
+            <dl>
+              <dt>Total:</dt>
+              <dd>502</dd>
+            </dl>
+            <dl>
+              <dt>Selected</dt>
+              <dd>502</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <div class="columns shrink"></div>
+    </div>
+  </div>
+</div>

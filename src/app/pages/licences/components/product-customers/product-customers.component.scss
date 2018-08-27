@@ -1,0 +1,30 @@
+@import "../../../../../assets/styles/foundation-sites/settings";
+$cell-horizont-padding: 20px;
+
+.settings_footer {
+  padding: 36px 0;
+}
+
+.settings_customers-wrapper {
+  table {
+    border-radius: 0 5px 0 0;
+    overflow: hidden;
+  }
+  thead {
+    th {
+      padding: 6px $cell-horizont-padding;
+      &:first-child { padding: 6px 0 6px 20px; }
+    }
+  }
+  tbody {
+    border-bottom: 1px solid #F2F2F2;
+    td {
+      font-size: rem-calc(14);
+      padding: 10px $cell-horizont-padding;
+      &:first-child{
+        border: none;
+        padding: 10px 0 10px $cell-horizont-padding;
+      }
+    }
+  }
+}

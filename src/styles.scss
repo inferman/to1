@@ -9,47 +9,9 @@
 @import "assets/styles/common/resets";
 @import "assets/styles/common/flex-grid";
 @import "assets/styles/common/buttons";
+@import "assets/styles/common/config";
 @import "assets/styles/common/checkbox";
 @import "assets/styles/common/checkbox-switcher";
+@import "assets/styles/common/datepicker";
+@import "assets/styles/common/primary-table";
 
-.to1-datepicker {
-  .dp-calendar-wrapper,
-  .dp-calendar-nav-container {
-    border: 1px solid $input-border-color;
-  }
-
-  .dp-calendar-nav-container {
-    height: 33px;
-  }
-  .dp-calendar-nav-left,
-  .dp-calendar-nav-right {
-    color: $primary-text-color;
-    line-height: 0;
-  }
-  .dp-months-row {
-    padding: 6px;
-  }
-  .dp-calendar-month {
-    border-radius: 3px;
-    width: 43px;
-    height: 26px;
-    padding: 8px;
-    font-size: 10px;
-    font-weight: bold;
-    text-transform: uppercase;
-    &:focus {
-      outline: none;
-    }
-  }
-  .dp-nav-header {
-    left: 50%;
-    font-weight: bold;
-    transform: translate(-50%, -50%);
-  }
-  .dp-nav-btns-container {
-    left: 10px;
-    right: 10px;
-    display: flex;
-    justify-content: space-between;
-  }
-}

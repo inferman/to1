@@ -31,7 +31,7 @@ export class LicencesComponent implements OnInit {
 
     this.taxesList = [{id: 1, text: 'tax category HS'}, {id: 2, text: 'tax category HTS'}];
 
-    this.currentTab = this.tabsHeaderData[0].type;
+    this.currentTab = this.tabsHeaderData[2].type;
 
     this.productUpdatesTable = {
       headings: ['List price', 'ERP', 'ERP margin', 'sales margin', 'Fixed $', 'effective sales price', 'effective sales margin', 'MARGIN type', 'discount table'],
