@@ -43,18 +43,42 @@
   .settings_footer
     .row.align-middle.align-justify
       .columns.shrink
-        .flex-container
-          .search
+        .customers_bottom-controls
+          .search-wrapper
             .search_box
               .search_input
                 i(aria-hidden="true").fa.fa-search
                 input(type="search", placeholder="Search")
-          .statistics
+          .statistics-wrapper
             dl
               dt Total:
               dd 502
+            span.delimiter /
             dl
-              dt Selected
+              dt Selected:
               dd 502
       .columns.shrink
+        .export_inner-wrapper
+          span.export_label Export as:
+          .export_btns-group
+            button(type="button").btn.btn--bordered
+              .inner-holder
+                svg.btn-icon.icon.svg-excel-icon
+                  use(xlink:href="../../../../../assets/img/symbol-defs.svg#svg-excel-icon")
+                span Excel
+            button(type="button").btn.btn--bordered
+              .inner-holder
+                svg.btn-icon.icon.svg-pdf-icon
+                  use(xlink:href="../../../../../assets/img/symbol-defs.svg#svg-pdf-icon")
+                span PDF
 
+            button(type="button").btn.btn--bordered
+              .inner-holder
+                svg.btn-icon.icon.svg-csv-icon
+                  use(xlink:href="../../../../../assets/img/symbol-defs.svg#svg-csv-icon")
+                span CSV
+
+            button(type="button").btn.btn--color-filled.btn--primary
+              .inner-holder
+                i(aria-hidden="true").btn-icon.fa.fa-check
+                span Apply&nbsp;(3)

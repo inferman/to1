@@ -1,0 +1,100 @@
+
+<div class="settings_defaults-wrapper">
+  <div class="settings_body">
+    <div class="defaults_controls-wrapper">
+      <div class="controls_container controls_container--large">
+        <div class="row align-bottom">
+          <div class="columns small-2">
+            <div class="input-field">
+              <div class="field-label">Minimum margin</div>
+              <input type="text"/>
+            </div>
+          </div>
+          <div class="columns small-2">
+            <div class="input-field">
+              <div class="field-label">MAximum margin</div>
+              <input type="text"/>
+            </div>
+          </div>
+          <div class="columns small-2">
+            <div class="input-field">
+              <div class="field-label">Fixed $</div>
+              <input type="text"/>
+            </div>
+          </div>
+          <div class="columns small-2">
+            <div class="input-field">
+              <div class="field-label">Default margin</div>
+              <input type="text"/>
+            </div>
+          </div>
+          <div class="columns small-2">
+            <div class="input-field">
+              <div class="field-label">Alternative 0 price</div>
+              <div class="input-toggle_wrapper">
+                <div class="input-toggle_box">
+                  <input type="text"/>
+                  <div class="input-toggle_toggle-area">
+                    <input class="hidden-checkbox" id="alternativePrice" type="checkbox" (change)="onPriceSwitch($event)"/>
+                    <label for="alternativePrice">
+                      <div class="input-toggle_element" data-checked="Yes" data-unchecked="No"></div>
+                    </label>
+                  </div>
+                </div>
+                <div class="tooltip-icon"><i class="fa fa-info" aria-hidden="true"></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="columns small-2">
+            <div class="input-field">
+              <div class="field-label">select Margin type</div>
+              <input type="text"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="controls_container controls_container--rest">
+        <div class="row">
+          <div class="columns small-12">
+            <div class="input-field">
+              <div class="field-label">discount table</div>
+              <simple-select [selectList]="[1,2,3,4,5]" [selectedItem]="1" (itemSelected)="onTableSelect($event)"></simple-select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="settings_footer">
+    <div class="row align-middle align-justify">
+      <div class="columns shrink">
+        <div class="defaults_tax-settings controls-holder">
+          <div class="switcher-wrapper">
+            <div class="can-toggle filters-toggle">
+              <input id="taxesSwitcher" type="checkbox"/>
+              <label for="taxesSwitcher">
+                <div class="can-toggle__switch" data-checked="Physical" data-unchecked="Digital"></div>
+              </label>
+            </div>
+          </div>
+          <div class="select-holder">
+            <simple-select [selectList]="taxesList" [selectedItem]="taxesList[0]"></simple-select>
+          </div>
+        </div>
+      </div>
+      <div class="columns shrink">
+        <div class="defaults_btns-row controls-holder">
+          <div class="select-holder">
+            <simple-select [selectList]="taxesList" [selectedItem]="taxesList[0]"></simple-select>
+          </div>
+          <button class="btn btn--color-filled btn--secondary" type="button">
+            <div class="inner-holder"><i class="btn-icon fa fa-refresh" aria-hidden="true"></i><span>Reset ERP</span></div>
+          </button>
+          <button class="btn btn--color-filled btn--primary" type="button">
+            <div class="inner-holder"><i class="btn-icon fa fa-check" aria-hidden="true"></i><span>Apply changes</span></div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

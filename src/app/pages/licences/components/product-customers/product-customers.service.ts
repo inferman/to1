@@ -69,7 +69,7 @@ export class CustomersService {
       currency: 'UAH',
       discountLevelMonthly: 5,
       discountLevelAnnually: 5
-    },
+    }
   ];
 
   getCustomersData() {

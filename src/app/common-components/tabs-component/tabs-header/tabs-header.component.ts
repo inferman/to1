@@ -23,6 +23,6 @@ export class  TabsHeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.activeTab = this.tabsList[0].type;
+    this.activeTab = this.tabsList[3].type;
   }
 }

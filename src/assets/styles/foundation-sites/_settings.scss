@@ -68,15 +68,16 @@
 $global-font-size: 100%;
 $global-width: rem-calc(1400);
 $global-lineheight: 1.5;
-$foundation-palette: (
+$main-palette: (
   primary: #006DCE,
   secondary: #FFB901,
   third: #191919,
   success: #9BC702,
   warning: #FFB901,
   alert: #F25022,
-  primary-text: #595959,
+  primary-text: #595959
 );
+$foundation-palette: $main-palette;
 
 $third-color: get-color(third);
 $primary-text-color: get-color(primary-text);
@@ -457,8 +458,8 @@ $input-line-height: $global-lineheight;
 $input-background: $white;
 $input-background-focus: $white;
 $input-background-disabled: $light-gray;
-$input-border: 1px solid $medium-gray;
-$input-border-focus: 1px solid $medium-gray;
+$input-border: 1px solid $input-border-color;
+$input-border-focus: 1px solid $input-border-color;
 $input-padding: $form-spacing / 2;
 $input-shadow: none;
 $input-shadow-focus: none;

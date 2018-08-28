@@ -17,6 +17,7 @@ import { TabItemComponent } from '../../common-components/tabs-component/tab-ite
 import { ProductUpdateComponent } from './components/product-update/product-update.component';
 import { ProductDiscountsComponent } from './components/discounts/product-discounts.component';
 import { ProductCustomersComponent } from './components/product-customers/product-customers.component';
+import {DefaultPriceSettingsComponent} from './components/products-defaults/products-defaults.component';
 
 // routes
 export const ROUTES: Routes = [
@@ -35,7 +36,8 @@ export const ROUTES: Routes = [
     TabItemComponent,
     ProductUpdateComponent,
     ProductDiscountsComponent,
-    ProductCustomersComponent
+    ProductCustomersComponent,
+    DefaultPriceSettingsComponent
   ],
   imports: [
     CommonModule,

@@ -53,27 +53,56 @@
   <div class="settings_footer">
     <div class="row align-middle align-justify">
       <div class="columns shrink">
-        <div class="flex-container">
-          <div class="search">
+        <div class="customers_bottom-controls">
+          <div class="search-wrapper">
             <div class="search_box">
               <div class="search_input"><i class="fa fa-search" aria-hidden="true"></i>
                 <input type="search" placeholder="Search"/>
               </div>
             </div>
           </div>
-          <div class="statistics">
+          <div class="statistics-wrapper">
             <dl>
               <dt>Total:</dt>
               <dd>502</dd>
-            </dl>
+            </dl><span class="delimiter">/</span>
             <dl>
-              <dt>Selected</dt>
+              <dt>Selected:</dt>
               <dd>502</dd>
             </dl>
           </div>
         </div>
       </div>
-      <div class="columns shrink"></div>
+      <div class="columns shrink">
+        <div class="export_inner-wrapper"><span class="export_label">Export as:</span>
+          <div class="export_btns-group">
+            <button class="btn btn--bordered" type="button">
+              <div class="inner-holder">
+                <svg class="btn-icon icon svg-excel-icon">
+                  <use xlink:href="../../../../../assets/img/symbol-defs.svg#svg-excel-icon"></use>
+                </svg><span>Excel</span>
+              </div>
+            </button>
+            <button class="btn btn--bordered" type="button">
+              <div class="inner-holder">
+                <svg class="btn-icon icon svg-pdf-icon">
+                  <use xlink:href="../../../../../assets/img/symbol-defs.svg#svg-pdf-icon"></use>
+                </svg><span>PDF</span>
+              </div>
+            </button>
+            <button class="btn btn--bordered" type="button">
+              <div class="inner-holder">
+                <svg class="btn-icon icon svg-csv-icon">
+                  <use xlink:href="../../../../../assets/img/symbol-defs.svg#svg-csv-icon"></use>
+                </svg><span>CSV</span>
+              </div>
+            </button>
+            <button class="btn btn--color-filled btn--primary" type="button">
+              <div class="inner-holder"><i class="btn-icon fa fa-check" aria-hidden="true"></i><span>Apply&nbsp;(3)</span></div>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
