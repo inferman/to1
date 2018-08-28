@@ -7,7 +7,7 @@ section.filters-wrapper
     (tabSwitched)="onGetTab($event)"
   )
     div(*ngSwitchCase="tabTypes.productUpdate")
-      product-update([tableData]="productUpdatesTable")
+      product-update
 
     div(*ngSwitchCase="tabTypes.discounts")
       product-discounts
@@ -16,7 +16,7 @@ section.filters-wrapper
       product-customers
 
     div(*ngSwitchCase="tabTypes.defaultSetForm")
-      products-price-settings()
+      products-price-settings
 
 section.products-wrapper
   products-list

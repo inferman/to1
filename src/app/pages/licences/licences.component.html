@@ -5,7 +5,7 @@
 <section class="filters-wrapper">
   <tabs-component [tabsHeadData]="tabsHeaderData" [ngSwitch]="currentTab" (tabSwitched)="onGetTab($event)">
     <div *ngSwitchCase="tabTypes.productUpdate">
-      <product-update [tableData]="productUpdatesTable"></product-update>
+      <product-update></product-update>
     </div>
     <div *ngSwitchCase="tabTypes.discounts">
       <product-discounts></product-discounts>

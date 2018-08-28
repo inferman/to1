@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {TabProps} from '../../interfaces/tab-props';
-import {TabTypes} from '../../interfaces/tabs-types';
+import { TabProps } from '../../interfaces/tab-props';
+import { TabTypes } from '../../interfaces/tabs-types';
 
 
 @Component({
@@ -10,12 +10,8 @@ import {TabTypes} from '../../interfaces/tabs-types';
 })
 export class LicencesComponent implements OnInit {
   tabsHeaderData: TabProps[];
-  productUpdatesTable;
-  taxesList: {id: number, text: string}[];
   currentTab: TabTypes;
-
   tabTypes = TabTypes;
-
 
   constructor() { }
 
@@ -27,23 +23,7 @@ export class LicencesComponent implements OnInit {
       { title: 'defaults', type: TabTypes.defaultSetForm }
     ];
 
-    this.taxesList = [{id: 1, text: 'tax category HS'}, {id: 2, text: 'tax category HTS'}];
-
-    this.currentTab = this.tabsHeaderData[3].type;
-
-    this.productUpdatesTable = {
-      headings: ['List price', 'ERP', 'ERP margin', 'sales margin', 'Fixed $', 'effective sales price', 'effective sales margin', 'MARGIN type', 'discount table'],
-      bodyData: {
-        listPrice: { currency: 'CHF', value: 93.62 },
-        erp: { currency: 'CHF', value: 93.62 },
-        erpMargin: { value: 93.62 },
-        salesMargin: { value: 93.62 },
-        fixedPrice: { currency: 'CHF', value: 12.18 },
-        effectivePrice: { currency: 'CHF', value: 93.62 },
-        effectiveMargin: { value: 93.62 },
-        taxes: this.taxesList
-      }
-    };
+    this.currentTab = this.tabsHeaderData[0].type;
   }
 
   onGetTab(activeTab: TabProps) {
