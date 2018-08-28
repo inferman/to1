@@ -10,10 +10,7 @@ section.filters-wrapper
       product-update([tableData]="productUpdatesTable")
 
     div(*ngSwitchCase="tabTypes.discounts")
-      product-discounts(
-        [discountTables]="discountTableList",
-        [discountData]="discountTableData"
-      )
+      product-discounts
 
     div(*ngSwitchCase="tabTypes.customers")
       product-customers

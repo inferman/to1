@@ -27,14 +27,14 @@
             td {{ customer.city }}
             td {{ customer.state }}
             td {{ customer.country }}
-            td.text-center {{ customer.currency }}
-            td
+            td(width=100).text-center {{ customer.currency }}
+            td(width=110)
               select( [(ngModel)]="customer.discountLevelMonthly" )
                 option(
                   *ngFor="let m of [0,1,2,3,4,5,6,7,8,9]",
                   [ngValue]="m"
                 ) {{ m }}
-            td
+            td(width=110)
               select( [(ngModel)]="customer.discountLevelAnnually" )
                 option(
                   *ngFor="let a of [0,1,2,3,4,5,6,7,8,9]",
